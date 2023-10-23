@@ -54,33 +54,39 @@ const Navbar = () => {
             <Link to="/">Log in</Link>
           </div>
         </div>
-        <div className={`vc-navbar-wrap ${isSticky ? "sticky" : ""}`}>
-          <nav className={`nav ${navExpanded ? "nav--expanded" : ""}`}>
-            <MenuOutlined
-              className="nav__collapser"
-              onClick={toggleNav}
-              style={{
-                color: "white",
-              }}
-            />
-            <Link to="/Home" className="nav__brand">
-              <img src={logo} alt="" />
-            </Link>
 
-            <div className={`nav__collapsable ${navExpanded ? "expanded" : ""}`}>
-              <Link to="/Home">HOME</Link>
-              <Link to="/about">ABOUT US</Link>
-              <Link to="/My-Cars">MY CARS</Link>
-              <Link to="/Findacar">BOOK A CAR</Link>
-              <Link to="/invoice-details">INVOICES</Link>
-
-              <div className="nav__cta">
-                <button className="cta cta--bold" onClick={() => navigate("/Contactus")}>
-                  CONTACT US
-                </button>
+        <div className="row">
+          <div className={`vc-navbar-wrap ${isSticky ? "sticky" : ""}`}>
+            <nav className={`nav ${navExpanded ? "nav--expanded" : ""}`}>
+              <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                <MenuOutlined
+                  className="nav__collapser"
+                  onClick={toggleNav}
+                  style={{
+                    color: "white",
+                  }}
+                />
+                <Link to="/Home" className="nav__brand">
+                  <img src={logo} alt="" />
+                </Link>
               </div>
-            </div>
-          </nav>
+              <div className="col-8">
+                <div className={`nav__collapsable ${navExpanded ? "expanded" : ""}`}>
+                  <Link to="/Home">HOME</Link>
+                  <Link to="/about">ABOUT US</Link>
+                  <Link to="/My-Cars">MY CARS</Link>
+                  <Link to="/Findacar">BOOK A CAR</Link>
+                  <Link to="/invoice-details">INVOICES</Link>
+
+                  <div className="nav__cta">
+                    <button className="cta cta--bold" onClick={() => navigate("/Contactus")}>
+                      CONTACT US
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
     </>

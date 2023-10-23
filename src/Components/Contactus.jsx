@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./Contactus.css";
 import {
   UserOutlined,
@@ -6,7 +6,7 @@ import {
   EditOutlined,
   CompassOutlined,
   PhoneOutlined,
-  UpOutlined
+  UpOutlined,
   //   MailOutlined,
 } from "@ant-design/icons";
 import FacebookIcon from "../Assests/Facebookicon";
@@ -21,12 +21,12 @@ const Contactus = () => {
     }
   };
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Add smooth scrolling effect
+      behavior: "smooth", // Add smooth scrolling effect
     });
   };
   return (
@@ -51,9 +51,7 @@ const Contactus = () => {
       <div className="contact-us-form">
         <div className="contact-form-left">
           <div className="contact-form-main">
-            <div className="contact-form-heading">
-              We'd love to hear from you
-            </div>
+            <div className="contact-form-heading">We'd love to hear from you</div>
             <div className="contact-form-subheading">
               Send us a message and we'll respond as soon as possible
             </div>
@@ -146,15 +144,17 @@ const Contactus = () => {
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108890.7906999881!2d74.399744!3d31.473664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190f7df22c3fe7%3A0x8dd7ffda40aa6b03!2sAllama%20Iqbal%20International%20Airport!5e0!3m2!1sen!2s!4v1692976941054!5m2!1sen!2s"
         width="100%"
         height="450"
+        title="google"
         style={{ border: 0 }}
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-       {isButtonVisible && (
-          <button className="scroll-to-top-button" onClick={scrollToTop}>
-<UpOutlined />          </button>
-        )}
+      {isButtonVisible && (
+        <button className="scroll-to-top-button" onClick={scrollToTop}>
+          <UpOutlined />{" "}
+        </button>
+      )}
     </div>
   );
 };

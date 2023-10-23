@@ -8,7 +8,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import { BrowserRouter as Router } from "react-router-dom";
 import TableBar from "./Components/TableData/Table";
 import App from "./App";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

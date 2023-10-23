@@ -40,7 +40,7 @@ const Footer = () => {
             <div className="copyright">© Copyright Vertex Cars 2021</div>
             <div className="footer-social-links">
               <div className="icons-social">
-                <div className="">
+                <div className="d-flex justify-content-end">
                   <FacebookIcon className="facebook" />
                 </div>
               </div>

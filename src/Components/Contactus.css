@@ -95,7 +95,7 @@
 .contact-icon-mail,
 .contact-icon-textarea {
   position: absolute;
-  top: 27px;
+  top: 15px;
   left: 8px; /* Adjust this value for spacing */
   transform: translateY(-51%);
   color: rgb(93, 100, 109);
@@ -211,30 +211,29 @@ textarea {
   width: 300px;
   height: 25px;
 }
-@media (max-width:580px) {
+@media (max-width: 580px) {
   .contact-us-form {
     margin-top: -10% !important;
     width: 100%;
     flex-direction: column;
-}
-.contact-form-info {
-  width: 100%;
-  flex-direction: column;
-  gap: 10px;
-}
-.contact-form-left {
-  /* margin-left: 5%; */
-  width: 90%;
-  margin: 0px auto;
-
-}
-.contact-form-right {
-  width: 90%;
-  margin-top: 6% !important;
-  margin-bottom: 6% !important;
-  margin: 0px auto;
-}
-.forget-submit{
-  margin-left: -210px;
-}
+  }
+  .contact-form-info {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-form-left {
+    /* margin-left: 5%; */
+    width: 90%;
+    margin: 0px auto;
+  }
+  .contact-form-right {
+    width: 90%;
+    margin-top: 6% !important;
+    margin-bottom: 6% !important;
+    margin: 0px auto;
+  }
+  .forget-submit {
+    margin-left: -210px;
+  }
 }
