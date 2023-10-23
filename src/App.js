@@ -13,6 +13,7 @@ import Forget from "./Components/Loginform/Forget";
 import Invoices from "./Components/Invoiceform/Invoiceform.jsx";
 import InvoicePage from "./Components/Invoicepage/invoicepage";
 import { InvoiceProvider } from "./Components/Invoicepage/InvoiceContext";
+import MyCars from "./Components/MyCars";
 const App = () => {
   const location = useLocation();
   const isEmployeePanelRendering = location.pathname === "/";
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/Home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/Findacar" element={<Findacar />} />
+          <Route path="/My-Cars" element={<MyCars />} />
           <Route path="/Contactus" element={<Contactus />} />
           <Route path="/forget" element={<Forget />} />
           <Route

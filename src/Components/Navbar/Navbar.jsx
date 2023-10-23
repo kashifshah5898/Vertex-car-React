@@ -70,8 +70,8 @@ const Navbar = () => {
             <div className={`nav__collapsable ${navExpanded ? "expanded" : ""}`}>
               <Link to="/Home">HOME</Link>
               <Link to="/about">ABOUT US</Link>
+              <Link to="/My-Cars">MY CARS</Link>
               <Link to="/Findacar">BOOK A CAR</Link>
-              <Link to="/Findacar">FIND A CAR</Link>
               <Link to="/invoice-details">INVOICES</Link>
 
               <div className="nav__cta">
