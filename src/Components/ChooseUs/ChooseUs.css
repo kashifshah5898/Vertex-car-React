@@ -1,0 +1,94 @@
+.choose-heading{
+    font-size: 40px;
+    color: #0d233e;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10%;
+}
+.choose-small-h{
+    font-size: 18px;
+    color: #5d646d;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 1%;
+}
+.choose-des-wrap{
+    margin-top: 5%;
+    display: flex;
+    width: 90.5%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,3,64,1) 10%, rgba(7,6,93,1) 20%, rgba(7,6,95,1) 34%, rgba(9,9,121,1) 53%, rgba(6,72,163,1) 66%, rgba(4,116,192,1) 76%, rgba(0,212,255,1) 100%);    margin: 0px auto;
+    border-radius: 5px;
+    height: 268px;
+    align-items: center;
+}
+.choose-descrip{
+    width: 22.5%;
+    text-align: center;
+    padding: 1%;
+    /* gap: 30px; */
+}
+
+.choose-icon{
+   /* margin-top: 10%!important; */
+    background-color: white;
+   margin: 0px auto;
+    border-radius: 100px;
+    padding: 0.4rem 0.5rem;
+    width: 10%;
+    
+}
+.choose-descrip-h{
+    font-size:18px ;
+    color: #ffed03;
+    padding-bottom: 8px;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+.description{
+    /* margin-top: -11px !important; */
+
+    font-size: 12px;
+    line-height: 22px;
+    color: white;
+    
+}
+
+  .choose-descrip.hovered .choose-icon {
+    /* Add your styles for the icon appearance when hovered */
+    background-color:#0088bd;; /* Set the background color on hover */
+    color: blue; 
+    transition: all 0.5s;
+    color: #ffed03;
+  }
+  @media (max-width:580px) {
+    .choose-heading{
+        font-size: 25px;
+        color: #0d233e;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 20%;
+    }
+    .choose-small-h{
+        font-size: 18px;
+        color: #5d646d;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 1%;
+        margin: 0% 5%;
+    }
+    .choose-des-wrap{
+       flex-direction: column-reverse;
+       height: auto;
+       padding-top: 9%;
+padding-bottom: 9%;
+    }
+    .choose-descrip{
+        width: 70%;
+        text-align: center;
+        padding: 1%;
+
+        /* gap: 30px; */
+    }
+    
+  }

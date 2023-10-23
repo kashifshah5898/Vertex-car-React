@@ -1,0 +1,491 @@
+.about-us-banner {
+  position: relative;
+  background-image: url("../Assests/bread-bg8\ \(2\).png");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about-us-banner::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(data:image/svg+xml,%3Csvg xmlnsXlink='http://www.w3.org/2000/svg' viewBox='0 0 460 55'%3E%3Cg fill='none' fillRule='evenodd' stroke='%23fff' strokeWidth='7' opacity='.1'%3E%3Cpath d='M-345 34.5s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 48.3 0 48.3s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3Cpath d='M-345 20.7s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 34.5 0 34.5s115-13.8 115-13.8S172.5 6.9 230 6.9s115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8m-920 27.6s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 62.1 0 62.1s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3Cpath d='M-345 6.9s57.5-13.8 115-13.8S-115 6.9-115 6.9-57.5 20.7 0 20.7 115 6.9 115 6.9 172.5-6.9 230-6.9 345 6.9 345 6.9s57.5 13.8 115 13.8S575 6.9 575 6.9'/%3E%3Cpath d='M-345-6.9s57.5-13.8 115-13.8S-115-6.9-115-6.9-57.5 6.9 0 6.9 115-6.9 115-6.9s57.5-13.8 115-13.8S345-6.9 345-6.9 402.5 6.9 460 6.9 575-6.9 575-6.9m-920 69s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 75.9 0 75.9s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3C/g%3E%3C/svg%3E%0A), linear-gradient(80deg, #000000, #01060d);
+  background-position: 50% 50%;
+  animation: background-move 20s linear infinite;
+  background-size: 100vw auto, 100% 100%;
+  opacity: 0.3;
+  /* z-index: -1; */
+
+}
+
+/* Add your animation styles here */
+.about-us-banner::before {
+  animation: background-move 20s linear infinite;
+}
+.banner-heading-about {
+  /* width: 6%; */
+  font-size: 40px;
+  width: 20%  !important;
+  color: #ffff;
+  font-weight: 700;
+  position: relative;
+  padding: 3%;
+  padding-bottom: 8%;
+  padding-left: 5%;
+}
+.bread-svg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  stroke: none;
+  fill: rgb(255, 255, 255);
+}
+.svg-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.card-image img {
+  width: 357px;
+  height: 246.66px;
+  border-radius: 5px;
+}
+.aboutus-cards {
+  width: 31.333%;
+}
+.about-card-content {
+  border-radius: 5px;
+  background-color: #f4f6ff;
+  width: 31.33%;
+  margin: 0px auto;
+}
+.card-content {
+  padding: 6%;
+  /* padding-left: 8%; */
+}
+.card-heading {
+  font-size: 19px;
+  color: rgb(13, 35, 62);
+  margin-bottom: 0.5rem !important;
+  font-weight: 600;
+}
+.card-description {
+  color: #5d646d;
+  font-size: 16px;
+  line-height: 28px;
+}
+.aboutus-cards {
+  width: 94%;
+  display: flex;
+  gap: 10px;
+  margin: 0px auto;
+  margin-top: 10%;
+}
+.about-card-content {
+  /* display: flex; */
+  align-items: center;
+  margin: 20px;
+  transition: transform 0.3s ease; /* Add transition to transform property */
+}
+
+.about-card-content:hover {
+  transform: scale(1.05); /* Apply zoom effect on hover */
+}
+
+.card-image {
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+}
+.aboutus-futuredrive-sec {
+  width: 90%;
+  display: flex;
+  margin-top: 5% !important;
+  margin: 0px auto ;
+  /* margin: 2%; */
+ 
+  gap: 60px;
+}
+.future-drive-des {
+  width: 50%;
+}
+.future-drive-heading {
+  font-size: 40px;
+  color: #0d233e;
+  font-weight: 700;
+}
+.future-drive-subhea {
+  font-size: 18px;
+  color: #0d233e;
+  line-height: 26px;
+  margin-top: 3%;
+}
+.future-drive-images {
+  width: 50%;
+}
+.future-drive-content {
+  font-size: 16px;
+  color: #5d646d;
+  margin-top: 3%;
+  line-height: 30px !important;
+text-align: justify;
+}
+.future-drive-images{
+    background-image: url(../Assests/about-img-01.png);
+    border-radius: 5px;
+}
+.vertex-car-image img{
+    top: 1100px;
+    right: 448px;
+    position: absolute;
+    border-radius: 150px;
+    border: 10px solid #ffff;
+}
+.aboutus-customermain-wrap{
+  background-color: #dbe1ff;
+
+}
+.about-us-costumersec{
+    margin-top: 10% !important ;
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+.left-customer-des{
+    width: 41%;
+    /* margin-right: 0.1%; */
+}
+.right-customer-slider{
+
+    width: 59%;
+    /* margin-right: 5%; */
+}
+
+.customer-menu-wrap{
+    background-color: white;
+    border-radius: 5px;
+    width: 300px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.customer-menu{
+    padding: 9%;
+    text-align: justify;
+}
+.slide-des{
+    font-size: 17px;
+    line-height: 30px;
+    color: #5d646d;
+    font-weight: 400;
+}
+.customer-name{
+  color: #0d233e;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 5%;
+}
+.customer-co{
+  font: 15px;
+  color: #5d646d;
+}
+.customer-rating{
+  color: #f9b852;
+  margin-top: 1%;
+}
+.customer-saying-heading{
+  font-size: 40px;
+    color: #0d233e;
+    font-weight: 700;
+    /* margin-left: 10%; */
+}
+.customer-des{
+  font-size: 18px;
+    color: #5d646d;
+    line-height: 30px;
+    margin-top: 4%;
+}
+/* Style the Swiper navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+ 
+  color: white; /* Set the text color */
+  border: none;
+  border-radius: 50%; /* Make it round */
+  padding: 2px 8px;
+   background-color: white; /* Set your desired background color */
+
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  content: 'prev';
+  color: black;
+  margin-right: 10%;
+  font-size: 15px !important;
+    opacity: 1;
+
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  content: 'next';
+  color: black;
+  margin-right: 10%;
+  font-size: 15px !important;
+    opacity: 1;
+}
+
+/* Change the button styles on hover */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #f9b852; /* Darker color on hover */
+  color: white;
+}
+.core-values-sec{
+  width: 90%;
+  gap: 40px;
+  display: flex;
+  margin: 0px auto;
+  margin-top: 10%;
+
+}
+.core-values-content{
+  width: 49%;
+}
+.core-value-slider{
+  width: 49%;
+}
+.core-values-content{
+  margin-left: 1%;
+}
+.core-value-heading{
+  font-size: 25px;
+    color: rgb(13, 35, 62);
+    font-weight: 700;
+}
+.core-value-desc{
+  padding: 1rem 0rem;
+  font-size: 16px;
+  color: #5d646d;
+  line-height: 28px;
+}
+.pb-3, .py-3 {
+  padding-bottom: 1rem!important;
+}
+.list-items li {
+  margin-bottom: 10px;
+  color: rgb(93, 100, 109);
+}
+.list-items li{
+   list-style: none;
+}
+.list-items {
+  line-height: 25px;
+  margin-top: -5px;
+
+}
+.aim-icon{
+  margin-right:2% ;
+  margin-left: -6%;
+  color:#66a2fb;
+}
+.core-slider img{
+  border-radius: 5px;
+  margin-right: 10px;
+}
+/* Change the color of Swiper pagination bullets */
+.swiper-pagination-bullet {
+  background-color: #f9b852 !important;
+  opacity: 0.5;
+  transition: background-color 0.3s, opacity 0.3s;
+  width: 12px !important; /* Set your desired width */
+  height: 12px !important;}
+
+/* Change the bullet color on hover */
+.swiper-pagination-bullet:hover {
+  background-color: #0056b3;
+  opacity: 1;
+}
+
+/* Change the color of active pagination bullet */
+.swiper-pagination-bullet-active {
+  width: 13px !important; /* Increase width for active bullet */
+  height: 13px !important; 
+  background-color: #f9b852 !important;
+  opacity: 1;
+}
+
+/* Specify the parent class for increased specificity */
+/* This assumes your Swiper container has a class "swiper-container" */
+.swiper-container .swiper-pagination-bullet-active {
+  width: 13px !important; /* Increase width for active bullet */
+  height: 13px !important; 
+  background-color: #f9b852 !important;
+  opacity: 1;
+}
+.vc-work-aboutus{
+  margin-top: 10%;
+  background-color: #dbe1ff;
+  margin-bottom: -10%;
+}
+.aboutus-work{
+  padding-top:0.1%;
+  padding-bottom: 5%;
+}
+@media (max-width:580px){
+  .about-us-banner {
+    position: relative !important;
+    /* background-image: url("../Assests/bread-bg8 (2).png") ; */
+    height: 110px !important;
+    width: 100% !important;
+    background-repeat: no-repeat;
+    margin-bottom: 17%;
+  }
+  .about-us-banner::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    /* height: 301px !important; */
+    /* background-image: url(data:image/svg+xml,%3Csvg xmlnsXlink='http://www.w3.org/2000/svg' viewBox='0 0 460 55'%3E%3Cg fill='none' fillRule='evenodd' stroke='%23fff' strokeWidth='7' opacity='.1'%3E%3Cpath d='M-345 34.5s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 48.3 0 48.3s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3Cpath d='M-345 20.7s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 34.5 0 34.5s115-13.8 115-13.8S172.5 6.9 230 6.9s115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8m-920 27.6s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 62.1 0 62.1s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3Cpath d='M-345 6.9s57.5-13.8 115-13.8S-115 6.9-115 6.9-57.5 20.7 0 20.7 115 6.9 115 6.9 172.5-6.9 230-6.9 345 6.9 345 6.9s57.5 13.8 115 13.8S575 6.9 575 6.9'/%3E%3Cpath d='M-345-6.9s57.5-13.8 115-13.8S-115-6.9-115-6.9-57.5 6.9 0 6.9 115-6.9 115-6.9s57.5-13.8 115-13.8S345-6.9 345-6.9 402.5 6.9 460 6.9 575-6.9 575-6.9m-920 69s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 75.9 0 75.9s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3C/g%3E%3C/svg%3E%0A), linear-gradient(80deg, #000000, #01060d); */
+    /* background-position: contain: ; */
+    animation: background-move 20s linear infinite;
+    background-size: 100vw auto, 100% 100%;
+    opacity: 0.3;
+    /* z-index: -1; */
+  
+  }
+  .banner-heading-about {
+    width: 100% !important;
+    font-size: 25px !important;
+    color: #ffff;
+    font-weight: 700;
+    padding-top: 5% !important;
+    padding-left: 2.5% !important;
+    position: relative;
+    /* padding: 3%; */
+    text-align: center !important;
+    /* padding-left: 2%; */
+    padding-bottom: 5%;
+  }
+  .bread-svg {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    stroke: none;
+    fill: rgb(255, 255, 255);
+  }
+  .svg-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: absolute;
+    top: 1px!important;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+  }
+  .aboutus-cards {
+    width: 100%;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: -10%;
+}
+.about-card-content {
+  border-radius: 5px;
+  background-color: #f4f6ff;
+  width: 90%;
+  gap: 50px;
+  margin: 0px auto;
+}
+.aboutus-futuredrive-sec {
+  width: 100%;
+  flex-direction: column;
+  margin: 2%;
+  margin-top: 15%;
+  gap: 60px;
+}
+.future-drive-des {
+  width: 90%;
+  margin: 0px auto;
+}
+.future-drive-images {
+  background-image: url("../Assests/about-img-01.png");
+  background-position: 50% 50%;
+  border-radius: 5px;
+  width: 560px !important;
+}
+.vertex-car-image img {
+  top: 1100px;
+  /* right: 350px; */
+  position: initial;
+  margin-right: 15px !important;
+  border-radius: 150px;
+  border: 10px solid #ffff;
+}
+.about-us-costumersec {
+  margin-top: 10%;
+  background-color: #dbe1ff;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+.left-customer-des {
+  width: 100%;
+margin-top: 5%;
+padding-top: 4%;
+  margin-left: 2%;
+}
+.right-customer-slider {
+  width: 90%;
+  /* margin-right: 5%; */
+  padding-bottom: 15%;
+}
+.customer-des {
+  font-size: 18px;
+  color: #5d646d;
+  line-height: 30px;
+  margin-left: 3%;
+}
+.core-values-sec {
+  width: 100%;
+  flex-direction: column;
+  margin-top: 10%;
+}
+.core-values-content {
+  width: 90%;
+  margin: 0px auto;
+}
+.core-value-slider {
+  width: 90% !important;
+  margin: 0px auto;
+}
+.customer-saying-heading {
+  font-size: 26px;
+  margin-left: 2.5%;
+  color: #0d233e;
+  font-weight: 700;
+  /* margin-left: 10%; */
+}
+}

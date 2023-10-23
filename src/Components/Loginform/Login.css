@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=nunito");
+
+body {
+  font-family: "nunito", sans-serif;
+}
+
+.app {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  /* /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+  background-color: #fff;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 25px !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+  background: #6cf0c2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  background-color: #01204e;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 25%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list-container {
+  display: flex;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px;
+}
+/* ... (other CSS styles) */
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkbox-container a {
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.checkbox-container a:hover {
+  color: #555;
+}
+.contact-label-login label {
+  color: white;
+  margin-top: 5%;
+  text-transform: capitalize;
+}
+.input-fields-password {
+  margin-top: 4%;
+}
+.contact-input-login input {
+  border: none;
+  margin-top: 3%;
+  width: 280px;
+  padding: 2% 2%;
+  height: 26px;
+  border-radius: 5px;
+}
+.contact-input-login input:focus {
+  outline: none;
+}
+.button-container button {
+  padding: 2% 10%;
+  background-color: #ffed03;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.button-container button:hover {
+  border: 2px solid #ffed03;
+  background-color: #01204e;
+  transition: all 0.5s;
+  color: #ffed03;
+}
+.forget-wrap {
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  background-color: white;
+  border: 1px solid#dfdfdf;
+  margin: 0px auto;
+  margin-top: 15%;
+}
+.lable-forget {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #f4f8fb;
+  border-left: 3px solid #022335;
+  padding-left: 5px;
+  text-align: left;
+}
+.forget-input {
+  /* margin-left: -10%; */
+  margin-top: 6%;
+  width: 80%;
+}
+@media (max-width: 580px) {
+  .login-form {
+    background-color: #01204e;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 74%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .button-container button {
+    padding: 4% 43%;
+    background-color: #ffed03;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .forget-wrap {
+    /* display: flex; */
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    background-color: white;
+    border: 1px solid#dfdfdf;
+    margin: 0px auto;
+    margin-top: 15%;
+  }
+  .forget-input {
+    /* margin-left: -10%; */
+    margin-top: 6% !important;
+    width: 90%;
+    margin: 0px auto;
+  }
+  :where(.css-dev-only-do-not-override-byeoj0).ant-form-item .ant-form-item-label > label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    height: 32px;
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 17px;
+  }
+  input[type="text"],
+  input[type="password"] {
+    height: 45px !important;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}

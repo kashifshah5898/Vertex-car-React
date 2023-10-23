@@ -1,0 +1,218 @@
+.footer {
+	/* position: fixed; */
+	/* width: 100vw; */
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 2rem;
+ 
+	/* Individual value for the menu icon, then auto size the rest */
+	grid-template-columns: 60px repeat(2, auto);
+	grid-template-rows: repeat(2, auto);
+   /* width: 100%; */
+   margin: 0px auto;
+	/* This is the layout for the navbar in expanded mobile mode */
+	grid-template-areas:
+		"collapser brand"
+		"collapsable collapsable";
+     padding-top: 3%;
+     border-bottom:  1px solid #133365;
+     padding-bottom: 2%;
+}
+.footer__collapsable-container{
+	
+		width: 76%;
+		gap: 30px !important;
+		display: flex;
+		text-align: right;
+		margin-left: 24%;
+		/* 2%: ; */
+	}
+
+.footer__collapser {
+	grid-area: collapser;
+	width: 30px;
+}
+
+
+.footer__cta {
+	display: flex;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+
+.footer__collapsable a:hover{
+    color: #f26f24;
+    /* transition: all 0.5s; */
+}
+.footer--expanded .nav__collapsable {
+	max-height: 500px; /* This is what shows the content */
+	margin-top: 1rem;
+	padding: 2rem 0;
+}
+
+/* Desktop mode styles */
+
+
+
+.footer__collapsable a {
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.cta {
+	font-size: 14px;
+	border-radius: 0.5em;
+	padding: 0.5em 1em;
+	/* border: 1px solid #0005; */
+    cursor: pointer;
+}
+
+.cta--bold {
+	background-color: transparent;
+	color: white;
+	font-weight: bold;
+}
+
+.footer__brand{
+    /* margin-left: 5%; */
+    width: 30%;
+}
+.footer-main {
+    /* margin-top: 10%; */
+    /* padding-bottom: 3%; */
+    background-color: #01204e;
+    width: 100%;
+}
+.vc-footer-wrap{
+    width: 95%;
+    margin: 0px auto;
+}
+.footer-copyright-sec{
+    /* width: 100%; */
+    display: flex;
+    padding: 2% ;
+	align-items: center;
+}
+.copyright{
+    width: 50%;
+    color: #7e95b7;
+    font-size: 15px;
+	margin-left: 1%;
+}
+.footer-social-links{
+   
+    width: 50%;
+}
+.icons-social{
+    text-align: right;
+}
+.footer__collapsable { color:   #7e95b7;display: block; margin:0;text-transform:uppercase; cursor: pointer; gap: 30px; }
+.footer__collapsable:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px #f26f24;;  
+  border-radius: 1px;
+  -webkit-transform: scaleX(0);  
+          transform: scaleX(0);  
+  -webkit-transition: -webkit-transform 250ms ease-in-out;  
+  transition: -webkit-transform 250ms ease-in-out;  
+  transition: transform 250ms ease-in-out;  
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  visibility: hidden;
+  text-align: right;
+}
+.footer__collapsable:hover:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.footer-link-wrap{
+	/* margin-left: 30%; */
+	text-align: right;
+	width: 70%;
+}
+.facebook{
+	gap: 70px !important;
+
+}
+ .facebook svg{
+	color: #ffff;
+    /* width: 38px; */
+    padding: 2%;
+    text-align: center;
+    background-color: rgba(128, 137, 150, 0.1);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	margin: 2px;
+}
+.facebook svg:hover{
+	color: #ffff;
+    /* width: 38px; */
+    padding: 2%;
+    text-align: center;
+    background-color: #f26f24;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ;
+}
+@media (max-width:580px){
+	.footer {
+		flex-direction: column;
+	}
+	.footer__brand{
+		margin-left: -90%;
+	
+	}
+	.footer__collapsable-container{
+		margin-left: -30px;
+		margin-top: 10px;
+		width: 300px;
+		display: flex;
+		flex-wrap: wrap; 
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+	.footer-link-wrap{
+		width: 60%;
+		margin-top: 5%;
+	}
+	.footer__collapsable:nth-child(4n){
+		/* width: 100%; */
+		float: left;
+	}
+	.footer-copyright-sec{
+		/* width: 100%; */
+		flex-direction: column;
+		padding: 2% ;
+		align-items: center;
+	}
+	.copyright{
+		margin-top: 12px;
+		width: 100%;
+		color: #7e95b7;
+		font-size: 15px;
+		text-align: center;
+		margin-bottom: 12px;
+	}
+	.icons-social {
+		text-align: center;
+	}
+}

@@ -1,0 +1,272 @@
+
+.details-img img {
+width: 100%;
+height: 300px;
+}
+.details-img::before {
+    position: absolute;
+    content: "";
+   
+    width: 100%;
+    height: 300px;
+    background-image: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 460 55'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23fff' stroke-width='7' opacity='.1'%3E%3Cpath d='M-345 34.5s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 48.3 0 48.3s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3Cpath d='M-345 20.7s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 34.5 0 34.5s115-13.8 115-13.8S172.5 6.9 230 6.9s115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8m-920 27.6s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 62.1 0 62.1s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3Cpath d='M-345 6.9s57.5-13.8 115-13.8S-115 6.9-115 6.9-57.5 20.7 0 20.7 115 6.9 115 6.9 172.5-6.9 230-6.9 345 6.9 345 6.9s57.5 13.8 115 13.8S575 6.9 575 6.9'/%3E%3Cpath d='M-345-6.9s57.5-13.8 115-13.8S-115-6.9-115-6.9-57.5 6.9 0 6.9 115-6.9 115-6.9s57.5-13.8 115-13.8S345-6.9 345-6.9 402.5 6.9 460 6.9 575-6.9 575-6.9m-920 69s57.5-13.8 115-13.8 115 13.8 115 13.8S-57.5 75.9 0 75.9s115-13.8 115-13.8 57.5-13.8 115-13.8 115 13.8 115 13.8 57.5 13.8 115 13.8 115-13.8 115-13.8'/%3E%3C/g%3E%3C/svg%3E%0A), linear-gradient(80deg, #000000, #01060d);
+    background-position: 50% 50%;
+    animation: background-move 20s linear infinite;
+    /* background-size: 100vw auto, 100% 100%; */
+    opacity: 0.5;
+    /* z-index: -1; */
+  
+  }
+  
+  /* Add your animation styles here */
+  .about-us-banner::before {
+    animation: background-move 20s linear infinite;
+  }
+  .car-details-descrip{
+    display: flex;
+    width: 96%;
+    margin: 0px auto;
+    gap: 40px;
+  }
+  .car-details-left{
+    width: 60%;
+    margin-top: 5%;
+    margin-left: 3%;
+  }
+  .car-details-right{
+    width: 40%;
+  }
+  .car-details-heading{
+    border-bottom: 1px solid #edf0ff;
+  }
+  .car-cat{
+    font-size: 26px;
+    font-weight: 700;
+    color: #0d233e;
+  }
+  .car-details-rating{
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    padding-top: 0.5%;
+    padding-bottom: 2%;
+  }
+  .car-specs{
+    display: flex;
+    margin-top: 2%;
+    width: 100%;
+    gap: 40px;
+    border-bottom: 1px solid #edf0ff;
+    margin-bottom: 10%;
+  }
+  .car-specs-left{
+    width: 50%;
+  }
+  .car-specs-right{
+   
+    width: 50%;
+  }
+  .car-specs-des{
+   padding: 4% 0%;
+   border-bottom: 1px solid #edf0ff;
+  }
+  .spec-heading{
+    font-size: 16px;
+    color: #0d233e;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  .spec-type{
+    font-size: 13px;
+    color: #5D646d;
+  }
+  .car-price-box{
+    background-color: #ffff;
+    border: 1px solid #edf0ff;
+    width: 95%;
+    border-radius: 5px;
+    position: relative;
+    top: -100px;
+  }
+  .price-car{
+    padding: 10%;
+  }
+  .car-feature{
+    font-size: 15px;
+    color: #0d233e;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .car-pricing{
+    margin-top: 6%;
+    font-size: 16px;
+    color: #5D646d;
+  }
+  .car-pricing span{
+    font-size: 24px;
+    color: #f26f24;
+    font-weight: 700;
+    margin-left: 2%;
+  }
+  .book-now-button{
+    margin-top: 2%;
+  }
+  .book-now-button button{
+    padding: 5% 8%;
+    background-color: #a1e600;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .book-now-button  button:hover{
+    background-color: #3e3d3d;
+    border: 1px solid #3e3d3d;
+    color: #FFF;
+    transition: all 0.3s;
+  }
+  .car-details-question{
+    margin-top: -15%;
+    background-color: #ffff;
+    border: 1px solid #edf0ff;
+    width: 95%;
+    border-radius: 5px;
+  }
+  .question-details{
+    padding: 10%;
+  }
+  .car-detail-question{
+    font-size: 17px;
+    color: #0d233e;
+    font-weight: 600;
+    width: 50%;
+  }
+  .car-detail-subhead{
+    font-size: 14px;
+    margin-top: 5%;
+    color: #5D646d;
+  }
+  .car-detail-icon{
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 4% 0%;
+    align-items: center;
+  }
+  .car-detail-mail{
+
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 4% 0%;
+    border-top: 1px solid #edf0ff;
+  }
+  .detail-phone-icon{
+    padding: 2% 2%;
+    border-radius: 50%;
+    color: white;
+    background-color: #f26f24;
+  }
+  .detail-phone a{
+    text-decoration: none;
+    color: #5D646d;
+    font-size: 16px;
+  }
+  .rental-car-details{
+    margin-top:3%;
+    width: 60%;
+    margin-left: 5%;
+  }
+  .rental-car-heading{
+    font-size: 20px;
+    color: #0d233e;
+    font-weight: 600;
+    padding-bottom: 3%;
+  }
+  .rental-car-des{
+    font-size: 16px;
+    color: #5D646d;
+    margin-bottom: 10%;
+    line-height: 30px;
+  }
+  .rental-car-des span{
+    font-size: 16px;
+    color: #5D646d;
+    line-height: 30px;
+  }
+  @media (max-width:580px) {
+    .details-img::before {
+      width: -webkit-fill-available;    
+    }
+    
+    /* Add your animation styles here */
+    .about-us-banner::before {
+      animation: background-move 20s linear infinite;
+    }
+    .car-details-descrip {
+      flex-direction: column;
+      width: 100%;
+      gap: 40px;
+  }
+  .car-details-left {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 5%;
+    margin-left: 3%;
+}
+.car-specs {
+  flex-direction: column;
+  margin-top: 2%;
+  width: 100%;
+  gap: 0px;
+  border-bottom: 1px solid #edf0ff;
+  margin-bottom: 10%;
+}
+.car-specs-left {
+  width: 100%;
+}
+.car-specs-right {
+  width: 100%;
+}
+.car-price-box {
+  background-color: #ffff;
+  border: 1px solid #edf0ff;
+  width: 95%;
+  border-radius: 5px;
+  position: relative;
+  top: 0px;
+  }
+  .car-details-right {
+    width: 90%;
+    margin: 0px auto;
+}
+.car-details-question {
+  margin-top: 5%;
+  background-color: #ffff;
+  border: 1px solid #edf0ff;
+  width: 95%;
+  border-radius: 5px;
+}
+.rental-car-details {
+  margin: 0px auto;
+  margin-top: 10%;
+  width: 90%;
+  margin-left: 3%;
+}
+.details-img img {
+  width: 580px;
+  height: 300px;
+}
+.contact-us-form {
+  margin-top: 7%;
+  width: 100%;
+  flex-direction: column;
+}
+.button-container{
+  
+}
+}

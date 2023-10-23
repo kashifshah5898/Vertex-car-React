@@ -1,0 +1,291 @@
+.about-us-banner {
+  position: relative;
+  background-image: url("../Assests/bread-bg8 (2).png");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about-us-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  background-color: linear-gradient(80deg, rgb(0, 0, 0), rgb(1, 6, 13));
+
+  background-size: 100%, cover; /* Adjust the background size values */
+  opacity: 0.4;
+  /* z-index: -1; */
+  background-position: 50% 50%;
+}
+
+/* Add your animation styles here */
+.about-us-banner::before {
+  animation: background-move 20s linear infinite;
+}
+.banner-heading-aboutfindcar {
+  width: 25%;
+  font-size: 40px;
+  color: #ffff;
+  font-weight: 700;
+  position: relative;
+  padding: 3%;
+  padding-left: 5%;
+  padding-bottom: 8%;
+}
+.bread-svg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  stroke: none;
+  fill: rgb(255, 255, 255);
+}
+.svg-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.stock-cars-main {
+  margin-top: 5%;
+  /* margin-left: 3%; */
+  width: 91%;
+  margin: 0px auto;
+}
+.carsstock-heading {
+  font-size: 24px;
+  color: #0d233e;
+}
+.carstock-sub-heading {
+  font-size: 14px;
+  padding-top: 5px;
+  color: #5d646d;
+}
+.stock-car-checklist {
+  /* width: 100%; */
+  width: 49%;
+  margin-top: 5%;
+  background-color: #f4f6ff;
+  display: flex;
+  border-radius: 10px;
+  /* margin-bottom: 5%; */
+}
+.card-media {
+  width: 35%;
+}
+.card-media img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+.card-media span {
+  position: absolute;
+  left: 20px;
+  margin-top: -50px;
+  background-color: #f26f24;
+  padding: 4px 8px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+.card-body {
+  width: 65%;
+}
+.car-type {
+  margin-top: 0.5%;
+  font-size: 15px;
+  color: #5d646d;
+}
+.card-body-wrap {
+  padding: 10px 30px 25px;
+}
+.car-co {
+  font-size: 19px;
+  color: #0d233e;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.car-rating {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  gap: 10px;
+  align-items: center;
+}
+.rating {
+  background-color: #f9b851;
+  font-size: 15px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 600;
+}
+.condition {
+  /* padding-left: 4px; */
+  /* padding-right: 4px; */
+  color: #f9b851;
+  font-size: 15px;
+}
+.reviews {
+  font-size: 14px;
+  color: #5d646d;
+}
+.car-des {
+  display: flex;
+  /* gap: 20px; */
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+.fuel-type {
+  padding-right: 12px;
+  color: #0d233e;
+}
+.car-cap {
+  padding-left: 12px;
+  padding-right: 12px;
+
+  /* text-align: center; */
+  border-left: 1px solid #e8ebf4;
+  border-right: 1px solid #e8ebf4;
+}
+.car-trans {
+  padding-left: 12px;
+}
+.car-price {
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+}
+.price {
+  width: 50%;
+  color: #0d233e;
+  font-size: 18px;
+  font-weight: 700;
+}
+.more-details {
+  width: 50%;
+  text-align: right;
+  color: #0d233e;
+  text-decoration: none;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+.more-details a {
+  width: 50%;
+  text-align: right;
+  color: #0d233e;
+  text-decoration: none;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.more-details a:hover {
+  color: #f9b851;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.stock-car-checklist .card-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-car-checklist .card-media img {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center top; /* Set transform origin to top center */
+}
+
+.stock-car-checklist .card-media:hover img {
+  transform: scale(1.1); /* Adjust the scale factor to your preference */
+}
+.breadcrumbs {
+  padding: 2% 0%;
+  margin-left: 5%;
+}
+.breadcrumb-home {
+  text-decoration: none;
+  color: #0d233e;
+  font-weight: 600;
+}
+.breadcrumbs span {
+  margin: 0px 3px;
+}
+@media (max-width: 580px) {
+  .stock-cars-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -5%;
+    margin-left: 3%;
+  }
+  .stock-car-checklist {
+    width: 97%;
+    margin-top: 5%;
+    background-color: #f4f6ff;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-bottom: 5%;
+  }
+  .card-media {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .card-body-wrap {
+    padding: 0px;
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+  .car-price {
+    display: flex;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  .banner-heading-aboutfindcar {
+    width: 100%;
+    font-size: 25px;
+    color: #ffff;
+    font-weight: 700;
+    position: relative;
+    padding: 3%;
+    padding-left: 2%;
+    padding-bottom: 8%;
+    text-align: center;
+    padding-top: 5%;
+  }
+}
+
+/* 
+ */
+@media (min-width: 580px) {
+  .stock-car-checklist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Adjust the gap as needed */
+    /* Add any other styling you require for spacing, margins, etc. */
+  }
+
+  .stock-car-checklist-item {
+    width: calc(50% - 10px); /* 2 cards in a row with gap of 20px */
+    /* Add any other styling for each card item */
+  }
+}

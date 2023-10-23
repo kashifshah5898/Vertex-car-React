@@ -1,0 +1,269 @@
+.vc-container{
+    width: 100%;
+    margin: 0px auto;
+    max-width: 1280px;
+	overflow: hidden
+    /* box-sizing: border-box; */
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.nav {
+	/* position: fixed; */
+	/* width: 100vw; */
+	display: grid;
+	align-items: center;
+	padding: 0.5rem 3.8rem;
+    background-color: #01204e;
+	/* Individual value for the menu icon, then auto size the rest */
+	grid-template-columns: 60px repeat(2, auto);
+	grid-template-rows: repeat(2, auto);
+
+	/* This is the layout for the navbar in expanded mobile mode */
+	grid-template-areas:
+		"collapser brand"
+		"collapsable collapsable";
+
+}
+
+.nav__collapser {
+	grid-area: collapser;
+	width: 30px;
+}
+
+
+.nav__cta {
+	display: flex;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.nav__collapsable {
+	display: grid;
+	align-items: center;
+	gap: 1rem;
+	width: 100%;
+	grid-area: collapsable;
+margin-left: 12%;
+	/* This is what hides the content */
+	overflow: hidden;
+	max-height: 0;
+color: white;
+	transition: padding 500ms ease, max-height 250ms ease;
+}
+.nav__collapsable a:hover{
+    color: #007bff;
+    transition: all 0.5s;
+}
+.nav--expanded .nav__collapsable {
+	max-height: 500px; /* This is what shows the content */
+	margin-top: 1rem;
+	padding: 2rem 0;
+}
+
+/* Desktop mode styles */
+@media (min-width: 580px) {
+	.nav {
+		/* Layout for nav in desktop mode */
+		grid-template-columns: repeat(4, auto);
+		grid-template-areas: "brand . collapsable collapsable";
+	}
+
+	.nav__collapser {
+		display: none;
+	}
+
+	.nav__collapsable {
+		max-height: 500px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.nav--expanded .nav__collapsable,
+	.nav__cta {
+		padding: 0;
+		margin: 0;
+	}
+
+	.nav__collapsable {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.nav__cta {
+		margin-left: 1.5rem;
+	}
+}
+
+
+.nav__collapsable a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.cta {
+	font-size: 14px;
+	border-radius: 0.5em;
+	padding: 0.5em 1em;
+	border: 1px solid #0005;
+    cursor: pointer;
+}
+
+.cta--bold {
+	background-color: transparent;
+	color: white;
+	font-weight: bold;
+    border: 1px solid white;
+}
+.nav__cta :hover{
+    color: #3190f6;
+    border: 1px solid #3190f6;
+    transition: all 1s;
+}
+
+.vc-navbar-login{
+    display: flex;
+    width: 100%;
+    background-color: #01204e;
+    border-bottom: 1px solid #072e6a;
+}
+.login-phone-main{
+    display: flex;
+    width: 50%;
+    color: white;
+  
+
+}
+
+.login-phone-no{
+    display: flex;
+    width: 100%;
+    align-items: center;
+     gap: 10px;
+    font-size: 14px;
+    margin-left: 20%;
+}
+.phone-no a{
+    text-decoration: none;
+	cursor: pointer;
+    color: white;
+	font-weight: 700;
+
+}
+.phone-no :hover{
+    color: #007bff;
+
+}
+.login-email-main{
+    display: flex;
+    width: 50%;
+    color: white;
+    
+}
+.vc-choose{
+	position: relative;
+}
+.login-email{
+    display: flex;
+    width: 100%;
+    align-items: center;
+       gap: 10px;
+    font-size: 14px;
+    margin-left: 15%;
+}
+.email a:hover{
+    color: #007bff;
+}
+.email a{
+	cursor: pointer;
+
+    text-decoration: none;
+    color: white;
+	font-weight: 700;
+}
+.login-button {
+    width: 60%;
+    text-align: right;
+    margin: 1%;
+  
+}
+.login-button a{
+text-decoration: none;   
+ border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+	margin-right: 7%;
+}
+.vc-question{
+	width: 100%;
+	background-color: #dae1ff;
+}
+
+  .vc-navbar-wrap {
+	transition: background-color 0.3s ease; /* Add a smooth transition for the background color */
+  }
+  
+  .vc-navbar-wrap.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000; /* Adjust this value as needed */
+	background-color: #01204e; /* Sticky navbar background color */
+  }  
+  .contact-us{
+	width: 50%;
+	display: flex;
+  }
+  @media (max-width:500px) {
+	.vc-navbar-login{
+		flex-direction: column-reverse;
+	}
+	.login-phone-main{
+		width: 50%;
+padding-left: 10%;
+	}
+	.login-phone-no{
+		margin-left: 0px !important;
+		text-align: center;
+
+	}
+	.login-email-main{
+		width: 50%;
+		margin-right: 10%;
+	}
+	.login-button{
+		/* flex-direction: column-reverse;
+		text-align: center; */
+		width: 100%;
+		text-align: center;
+	}
+	.contact-us{
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
+  }
+  .scroll-to-top-button {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color:#ffdd03;
+	color: white;
+	border: none;
+	padding: 10px 10px;
+	border-radius: 50px;
+	cursor: pointer;
+	animation: slideInRight 1s forwards; /* Apply the right-to-left animation */
+}
+
+@keyframes slideInRight {
+  from {
+    right: -60px; /* Start position off-screen to the right */
+  }
+  to {
+    right: 40px; /* End position on-screen */
+  }
+}
