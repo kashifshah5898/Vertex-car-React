@@ -1,160 +1,75 @@
 import React, { useState, useEffect } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import Swal from "sweetalert2";
 
 import "./invoicepage.css";
+import { toast } from "react-toastify";
+import { getAllInvoicesAPI } from "../../Api/Service";
+import { VEH_IMAGE_URL } from "../../Api/constants";
 
 function Invoicepage() {
-  const location = useLocation();
-  const mydata = location.state;
-  const navigate = useNavigate();
   const [invoices, setInvoices] = useState([]);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [editIndex, setEditIndex] = useState(null); // Keep track of the edited invoice index
-  const [editedCompany, setEditedCompany] = useState(""); // Keep track of the edited company name
 
   useEffect(() => {
-    const savedInvoices = JSON.parse(localStorage.getItem("savedInvoices")) || [];
-    setInvoices(savedInvoices);
+    getAllInvoices();
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("savedInvoices", JSON.stringify(invoices));
-  }, [invoices]);
+  const getAllInvoices = async () => {
+    try {
+      const response = await getAllInvoicesAPI();
 
-  const handleSaveInvoice = () => {
-    if (mydata && !invoices.some((savedInvoice) => savedInvoice.type === mydata.company)) {
-      setInvoices([...invoices, mydata]);
-      Swal.fire({
-        icon: "success",
-        title: "Successfully Saved!",
-        text: "Your Invoice was Saved!",
-        showConfirmButton: false,
-        timer: 3000,
-      }).then(() => {
-        navigate("/invoice-details");
-      });
+      if (response.status === "1") {
+        setInvoices(response.data);
+      } else {
+        toast.error(response.error);
+      }
+    } catch (error) {
+      toast.error(error.msg || error.message || "Something went wrong");
     }
   };
 
-  const handleEditCompany = (index, company) => {
-    setEditIndex(index);
-    setEditedCompany(company);
-  };
+  const Card = ({ data, index }) => {
+    const { veh_images, veh_name, model, inv_id, inv_amount, status, paid_amount, due_date } = data;
+    const statusColor = status === "pending" ? "text-red" : "text-green";
+    return (
+      <div className="card width-22">
+        <img src={VEH_IMAGE_URL + veh_images[0]} className="card-img-top" alt="image_not_found" />
+        <div className="card-body">
+          <h5 className="card-title">
+            {veh_name} &nbsp;
+            <span className="fs-md">
+              (<span className="text-green ">{model}</span>)
+            </span>
+          </h5>
 
-  const handleCancelEdit = () => {
-    setEditIndex(null);
-    setEditedCompany("");
-  };
-
-  const handleSaveEditedCompany = (index) => {
-    const updatedInvoices = [...invoices];
-    updatedInvoices[index].company = editedCompany;
-    setInvoices(updatedInvoices);
-    setEditIndex(null);
-    setEditedCompany("");
+          <ul>
+            <div className="row card-text card-font">
+              <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <li>Inv ID : {inv_id}</li>
+                <li className={statusColor}>Status : {status}</li>
+                <li>Due Date : {due_date.split(" ")[0]}</li>
+              </div>
+              <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <li>Inv amount : {inv_amount}</li>
+                <li>Paid amount : {paid_amount} </li>
+                <li>Payable amount : {inv_amount - paid_amount} </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div className="vc-container">
-      <div className="invoice-page">
-        {mydata && (
-          <div className="invoice-card-des">
-            {/* Display the current invoice */}
-            <div className="invoice-card-img">
-              <img src={mydata.img} alt="" />
-            </div>
-            <div className="invoice-card-main">
-              <div className="invoicecard-type">{mydata.type}</div>
-              <div className="invoicecard-company">{mydata.company}</div>
-              <div className="invoice-card-capacity">{mydata.capacity}</div>
-              <div className="invoicecard-price">{mydata.price}</div>
-              <button
-                onClick={handleSaveInvoice}
-                className={`Saveinvoice ${
-                  invoices.some((savedInvoice) => savedInvoice.type === mydata.company)
-                    ? "disabled"
-                    : ""
-                }`}
-                disabled={invoices.some((savedInvoice) => savedInvoice.type === mydata.company)}
-              >
-                {invoices.some((savedInvoice) => savedInvoice.type === mydata.company)
-                  ? "Invoice Saved"
-                  : "Save Invoice"}
-              </button>
-            </div>
-          </div>
+    <div className="container p-4">
+      <div className="invoice-card-heading">
+        <h2>Your Invoices</h2>
+      </div>
+      <div className="saved-invoices">
+        {invoices.length === 0 ? (
+          <div className="no-invoices-message">Nothing to show</div>
+        ) : (
+          invoices.map((invoice, index) => <Card data={invoice} key={index} />)
         )}
-
-        <div className="invoice-card-heading">
-          <h2>Your Invoices</h2>
-        </div>
-        <div className="saved-invoices">
-          {invoices.length === 0 ? (
-            <div className="no-invoices-message">Nothing to show</div>
-          ) : (
-            invoices.map((invoice, index) => (
-              <div
-                key={index}
-                className="saved-invoice"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <div className="invoice-cardsaved-img">
-                  <img src={invoice.img} alt="" />
-                </div>
-                <div className="invoice-cardsaved-main">
-                  <div className="invoicecard-type">{invoice.type}</div>
-                  <div className="invoicecard-company">{invoice.company}</div>
-                  <div className="invoice-card-capacity">{invoice.capacity}</div>
-                  <div className="invoicecard-price">{invoice.price}</div>
-                  {editIndex === index ? (
-                    <div className="change-input-field">
-                      <div className="invoices-change-field">
-                        <input
-                          type="text"
-                          value={editedCompany}
-                          onChange={(e) => setEditedCompany(e.target.value)}
-                        />
-                      </div>
-                      <div className="cancel-save-btn">
-                        <button onClick={() => handleSaveEditedCompany(index)} className="Save-btn">
-                          Save
-                        </button>
-                        <button onClick={handleCancelEdit} className="cancel-btn">
-                          Cancel
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="company-actions">
-                      {hoveredIndex === index && (
-                        <>
-                          <div className="edit-invoice-button">
-                            <button onClick={() => handleEditCompany(index, invoice.company)}>
-                              <EditOutlined />
-                            </button>
-                          </div>
-                          <div className="delete-invoice-button">
-                            <button
-                              onClick={() => {
-                                const newInvoices = invoices.filter((_, i) => i !== index);
-                                setInvoices(newInvoices);
-                              }}
-                            >
-                              <DeleteOutlined />
-                            </button>
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))
-          )}
-        </div>
       </div>
     </div>
   );

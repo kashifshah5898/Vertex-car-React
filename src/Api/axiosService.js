@@ -14,7 +14,7 @@ axiosService.interceptors.request.use(
     });
 
     token = token.authReducer.user.token;
-
+    config.data = { ...config.data, token: token };
     // For Authorization
     config.headers = token ? { "x-sh-auth": token } : null;
     return config;

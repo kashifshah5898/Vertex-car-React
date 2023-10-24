@@ -14,6 +14,18 @@ code {
   color: red;
 }
 
+.text-green {
+  color: green;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.width-22 {
+  width: 22rem;
+}
+
+.card {
+  background-color: whitesmoke;
 }
