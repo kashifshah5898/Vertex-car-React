@@ -1,68 +1,49 @@
-import React, { useState } from "react";
-
 import "./Login.css";
 import LoginLayout from "./LoginLayout";
 import { Link, useNavigate } from "react-router-dom";
-import Home from "../Home";
+import { useFormik } from "formik";
+import { toast } from "react-toastify";
+import * as Yup from "yup";
+import { loginAPI } from "../../Api/Service";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../Redux/Reducers/authSlice";
 
 const Login = () => {
-  const Navigate = useNavigate();
-  // React States
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // User Login info
-  const database = [
-    {
-      username: "Arham",
-      password: "pass1",
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
     },
-    {
-      username: "Umair",
-      password: "pass2",
-    },
-  ];
+    validationSchema: Yup.object({
+      email: Yup.string().required("Required Field").email("Please enter a valid email address"),
+      password: Yup.string().required("Required field"),
+    }),
+    onSubmit: (values) => handleSubmit(values),
+  });
 
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password",
-  };
+  const handleSubmit = async (values) => {
+    try {
+      const response = await loginAPI(values);
 
-  const handleSubmit = (event) => {
-    //Prevent page reload
-    event.preventDefault();
-
-    var { uname, pass } = document.forms[0];
-
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
-
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
+      if (response.status === "1") {
+        navigate("/Home");
+        dispatch(setUser(response.data));
       } else {
-        setIsSubmitted(true);
-        Navigate("/Home");
+        toast.error(response.error);
       }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
+    } catch (error) {
+      toast.error(error.msg || error.message || "Something went wrong");
     }
   };
-
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
 
   // JSX code for login form
   const renderForm = (
     <LoginLayout>
       <div className="contact-form-info">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
           <div className="input-fields-login">
             <div className="contact-label-login">
               <label htmlFor="name">
@@ -71,14 +52,19 @@ const Login = () => {
             </div>
             <div className="contact-input-login">
               <input
-                type="name"
-                id="name"
-                name="uname"
+                name="email"
                 placeholder="Your Name"
-                required
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
-              {/* <UserOutlined className="contact-icon-user" /> */}
-              {renderErrorMessage("uname")}
+
+              {formik.touched.email && formik.errors.email && (
+                <>
+                  <br />
+                  <span className="text-red">{formik.errors.email}</span>
+                </>
+              )}
             </div>
           </div>
           <div className="input-fields-password">
@@ -88,25 +74,28 @@ const Login = () => {
             <div className="contact-input-login">
               <input
                 type="password"
-                id="email"
-                placeholder=" Password"
-                name="pass"
-                required
-                pl
+                placeholder="Password"
+                name="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
               />
-              {/* <MailOutlined className="contact-icon-mail" /> */}
-              {renderErrorMessage("pass")}
+              {formik.touched.password && formik.errors.password && (
+                <>
+                  <br />
+                  <span className="text-red">{formik.errors.password}</span>
+                </>
+              )}
             </div>
             <div className="checkbox-container">
               <label>
                 <input type="checkbox" />
                 Remember Me
               </label>
-             <Link to={"/forget"}>Forget Password</Link>
+              <Link to={"/forget"}>Forget Password</Link>
             </div>
             <div className="button-container">
               <button type="submit">Login</button>
-              {/* <img src=" /Users/psi-square/Desktop/Vertex/vertex-app/src/Assests/vertex-car-logo.png" alt=""/> */}
             </div>
           </div>
         </form>
@@ -116,9 +105,9 @@ const Login = () => {
 
   return (
     <div className="app">
-      <div className="login-form">
+      <div className="login-form d-flex justify-content-center align-items-center flex-column">
         <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {renderForm}
       </div>
     </div>
   );

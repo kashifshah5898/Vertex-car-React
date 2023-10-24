@@ -14,13 +14,19 @@ import Invoices from "./Components/Invoiceform/Invoiceform.jsx";
 import InvoicePage from "./Components/Invoicepage/invoicepage";
 import { InvoiceProvider } from "./Components/Invoicepage/InvoiceContext";
 import MyCars from "./Components/MyCars";
+import { useSelector } from "react-redux";
+import Loader from "./Components/Loader/Loader";
+import Constant from "./utils/Constant";
 const App = () => {
   const location = useLocation();
   const isEmployeePanelRendering = location.pathname === "/";
   const isForgetPageRendering = location.pathname === "/forget";
 
+  const loader = useSelector((state) => state.loaderReducer.loader);
+
   return (
     <>
+      {loader && <Loader />}
       <ScrollToTop>
         {isEmployeePanelRendering && <Login />}
         {!isEmployeePanelRendering && !isForgetPageRendering && <Navbar />}

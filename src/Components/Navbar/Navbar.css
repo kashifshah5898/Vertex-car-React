@@ -245,8 +245,10 @@
   border: none;
   padding: 10px 10px;
   border-radius: 50px;
-  cursor: pointer;
-  animation: slideInRight 1s forwards; /* Apply the right-to-left animation */
+  display: flex;
+  animation: slideInRight 1s forwards;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes slideInRight {

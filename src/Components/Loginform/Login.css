@@ -104,7 +104,7 @@ input[type="submit"]:hover {
   text-transform: capitalize;
 }
 .input-fields-password {
-  margin-top: 4%;
+  /* margin-top: 4%; */
 }
 .contact-input-login input {
   border: none;

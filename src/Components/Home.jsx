@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import Banner from './Banner/Banner';
-import ChooseUs from './ChooseUs/ChooseUs';
-import Questions from './Questions/Questions';
-import Work from './Work/Work';
+import React, { useState } from "react";
+import Banner from "./Banner/Banner";
+import ChooseUs from "./ChooseUs/ChooseUs";
+import Questions from "./Questions/Questions";
+import Work from "./Work/Work";
 import "../Components/Navbar/Navbar.css";
-import {
-UpOutlined  
-} from "@ant-design/icons";
+import { UpOutlined } from "@ant-design/icons";
 const Home = () => {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
 
@@ -18,12 +16,12 @@ const Home = () => {
     }
   };
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Add smooth scrolling effect
+      behavior: "smooth", // Add smooth scrolling effect
     });
   };
 
@@ -44,7 +42,8 @@ const Home = () => {
         </div>
         {isButtonVisible && (
           <button className="scroll-to-top-button" onClick={scrollToTop}>
-<UpOutlined />          </button>
+            <UpOutlined />{" "}
+          </button>
         )}
       </div>
     </div>

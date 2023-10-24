@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import FacebookIcon from "../../Assests/Facebookicon";
 const Footer = () => {
   return (
-    <div className="vc-container">
+    <div className="vc-container mt-2">
       {" "}
       <div className="footer-main">
         <div className="vc-footer-wrap">

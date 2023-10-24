@@ -3,9 +3,13 @@ import { PhoneOutlined, MailOutlined, MenuOutlined } from "@ant-design/icons";
 import "./Navbar.css";
 import logo from "../../Assests/vertex-car-logo.png";
 import { Link, useNavigate } from "react-router-dom";
+import Constant from "../../utils/Constant";
+import { logout } from "../../Redux/Reducers/authSlice";
 // import CardSlider from "../CardSlider/CardSlider";
 const Navbar = () => {
   const [navExpanded, setNavExpanded] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const reduxInfo = Constant.reduxData();
 
   const toggleNav = () => {
     setNavExpanded((prevNavExpanded) => !prevNavExpanded);
@@ -14,6 +18,9 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
+    const bool = reduxInfo?.authReducer?.user?.token ? true : false;
+    setIsLoggedIn(bool);
+
     const handleScroll = () => {
       setIsSticky(window.scrollY > 0);
     };
@@ -23,6 +30,18 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const checkLogin = () => {
+    if (isLoggedIn) {
+      logout();
+      setIsLoggedIn(false);
+      localStorage.clear();
+      navigate("/Home");
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <>
       <div className="vc-container">
@@ -50,8 +69,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="login-button">
-            <Link to="/">Log in</Link>
+          <div className="login-button text-white ">
+            <span onClick={() => checkLogin()} className="pointer">
+              {isLoggedIn ? "Log out" : "Log in"}
+            </span>
           </div>
         </div>
 

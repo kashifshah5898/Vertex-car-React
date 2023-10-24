@@ -89,20 +89,27 @@
   border-bottom-left-radius: 10px;
   cursor: pointer;
 }
-.card-media span {
+.specialSpan {
   position: absolute;
-  left: 20px;
-  margin-top: -50px;
+  top: 80%;
+  left: 5%;
+  width: 10%;
+  display: flex;
   background-color: #f26f24;
   padding: 4px 8px;
   border-radius: 40px;
   font-size: 12px;
   font-weight: 700;
   color: white;
+  justify-content: center;
+  align-items: center;
 }
-.card-body {
+.stock-car-checklist-position-relative {
+  position: relative;
+}
+/* .card-body {
   width: 65%;
-}
+} */
 .car-type {
   margin-top: 0.5%;
   font-size: 15px;
@@ -153,6 +160,9 @@
 .fuel-type {
   padding-right: 12px;
   color: #0d233e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .car-cap {
   padding-left: 12px;
@@ -229,6 +239,22 @@
   margin: 0px 3px;
 }
 @media (max-width: 580px) {
+  .specialSpan {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 20%;
+    display: flex;
+    background-color: #f26f24;
+    padding: 4px 8px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+
   .stock-cars-main {
     display: flex;
     flex-direction: column;
@@ -249,9 +275,7 @@
     border-radius: 10px;
   }
   .card-body-wrap {
-    padding: 0px;
-    margin-top: 5%;
-    margin-left: 5%;
+    padding: 5px;
   }
   .car-price {
     display: flex;
