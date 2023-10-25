@@ -174,5 +174,38 @@
 
 .card-font {
   font-size: 13px;
-  font-weight: bold;
+}
+
+.card-font-17 {
+  font-size: 17px;
+}
+
+/* Define CSS for the label and select elements */
+#statusFilterLabel {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #333; /* Text color */
+}
+
+#statusFilter {
+  padding: 5px;
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px;
+  color: #333; /* Text color */
+  background-color: #fff; /* Background color */
+  cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+/* Style option elements in the dropdown */
+#statusFilter option {
+  font-size: 14px;
+  color: #333; /* Text color */
+  background-color: #fff; /* Background color */
+}
+
+/* Style the selected option in the dropdown */
+#statusFilter option:checked {
+  background-color: #007bff; /* Highlight the selected option */
+  color: #fff; /* Text color for the selected option */
 }

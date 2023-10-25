@@ -29,3 +29,8 @@ code {
 .card {
   background-color: whitesmoke;
 }
+
+.card img {
+  padding: 4px;
+  border-radius: 10px;
+}

@@ -7,6 +7,8 @@ import * as Yup from "yup";
 import { loginAPI } from "../../Api/Service";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Redux/Reducers/authSlice";
+import { useEffect } from "react";
+import Constant from "../../utils/Constant";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -23,6 +25,11 @@ const Login = () => {
     }),
     onSubmit: (values) => handleSubmit(values),
   });
+
+  useEffect(() => {
+    const reduxInfo = Constant.reduxData();
+    if (reduxInfo?.authReducer?.user?.token) return navigate("/Home");
+  }, []);
 
   const handleSubmit = async (values) => {
     try {

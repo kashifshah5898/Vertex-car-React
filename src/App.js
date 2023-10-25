@@ -17,6 +17,8 @@ import MyCars from "./Components/MyCars";
 import { useSelector } from "react-redux";
 import Loader from "./Components/Loader/Loader";
 import Constant from "./utils/Constant";
+import VehicleInvoice from "./Components/Invoicepage/VehicleInvoice";
+import PayInvoice from "./Components/Invoicepage/PayInvoice";
 const App = () => {
   const location = useLocation();
   const isEmployeePanelRendering = location.pathname === "/";
@@ -35,6 +37,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/Findacar" element={<Findacar />} />
           <Route path="/My-Cars" element={<MyCars />} />
+          <Route path="/Vehicle-Invoice" element={<VehicleInvoice />} />
+          <Route path="/Pay-Invoice" element={<PayInvoice />} />
           <Route path="/Contactus" element={<Contactus />} />
           <Route path="/forget" element={<Forget />} />
           <Route

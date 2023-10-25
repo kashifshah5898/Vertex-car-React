@@ -8,13 +8,7 @@ import vertexcar from "../Assests/about-img-02.png";
 import coreslideimg1 from "../Assests/about-img-03.png";
 import coreslideimg2 from "../Assests/about-img-04.png";
 import Work from "./Work/Work.jsx";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -65,8 +59,7 @@ const About = () => {
             <div className="card-content">
               <div className="card-heading">Do You want to sell a car?</div>
               <div className="card-description">
-                Duis cursus lectus sed dui imperdiet, id pharetra nunc
-                ullamcorper donec luctus.
+                Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper donec luctus.
               </div>
             </div>
           </div>
@@ -77,8 +70,7 @@ const About = () => {
             <div className="card-content">
               <div className="card-heading">Are You looking for a new car?</div>
               <div className="card-description">
-                Duis cursus lectus sed dui imperdiet, id pharetra nunc
-                ullamcorper donec luctus.
+                Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper donec luctus.
               </div>
             </div>
           </div>
@@ -87,34 +79,27 @@ const About = () => {
               <img src={sevice} alt="" />
             </div>
             <div className="card-content">
-              <div className="card-heading">
-                How to schedule a service online?
-              </div>
+              <div className="card-heading">How to schedule a service online?</div>
               <div className="card-description">
-                Duis cursus lectus sed dui imperdiet, id pharetra nunc
-                ullamcorper donec luctus.
+                Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper donec luctus.
               </div>
             </div>
           </div>
         </div>
         <div className="aboutus-futuredrive-sec">
           <div className="future-drive-des">
-            <div className="future-drive-heading">
-              Welcome To Your Future Drive
-            </div>
+            <div className="future-drive-heading">Welcome To Your Future Drive</div>
             <div className="future-drive-subhea">
-              Before we get ahead of ourselves, we want to welcome you to Vertex
-              Cars. While nothing can replace thing on-the-lot experience.
+              Before we get ahead of ourselves, we want to welcome you to Vertex Cars. While nothing
+              can replace thing on-the-lot experience.
             </div>
             <div className="future-drive-content">
-              We appreciate you taking the time today to visit our web site. Our
-              goal is to give you an interactive tour of our new and used
-              inventory, as well as allow you to conveniently get a quote,
-              schedule a service appointment, or apply for financing. The search
-              for a luxury car is filled with high expectations. Undoubtedly,
-              that has a lot to do with the vehicles you are considering, but at
-              Motors, we think you should also have pretty high expectations for
-              your dealership.
+              We appreciate you taking the time today to visit our web site. Our goal is to give you
+              an interactive tour of our new and used inventory, as well as allow you to
+              conveniently get a quote, schedule a service appointment, or apply for financing. The
+              search for a luxury car is filled with high expectations. Undoubtedly, that has a lot
+              to do with the vehicles you are considering, but at Motors, we think you should also
+              have pretty high expectations for your dealership.
             </div>
           </div>
           <div className="future-drive-images">
@@ -126,12 +111,9 @@ const About = () => {
         <div className="aboutus-customermain-wrap">
           <div className="about-us-costumersec">
             <div className="left-customer-des">
-              <div className="customer-saying-heading">
-                What our customers are saying us?
-              </div>
+              <div className="customer-saying-heading">What our customers are saying us?</div>
               <div className="customer-des">
-                Morbi convallis bibendum urna ut viverra. Maecenas quis
-                consequat libero
+                Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero
               </div>
             </div>
             <div className="right-customer-slider">
@@ -142,23 +124,20 @@ const About = () => {
                 navigation
                 // freeMode
                 loop={true} // Enable looping
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log("slide change")}
               >
                 <SwiperSlide>
                   <div className="customer-menu-wrap">
                     <div className="customer-menu">
                       {" "}
                       <div className="slide-des">
-                        Nunc feugiat porta viverra. In gravida pulvinar
-                        pharetra. Phasellus finibus dui vel sagittis convallis.
-                        Nulla bibendum felis quis erat iaculis viverra platea
-                        dictumst.
+                        Nunc feugiat porta viverra. In gravida pulvinar pharetra. Phasellus finibus
+                        dui vel sagittis convallis. Nulla bibendum felis quis erat iaculis viverra
+                        platea dictumst.
                       </div>
                       <div className="customer-name">Alex</div>
-                      <div className="customer-co">
-                        Nissan Micra Acenta Auto
-                      </div>
+                      <div className="customer-co">Nissan Micra Acenta Auto</div>
                       <div className="customer-rating">
                         <StarFilled />
                         <StarFilled />
@@ -174,15 +153,12 @@ const About = () => {
                     <div className="customer-menu">
                       {" "}
                       <div className="slide-des">
-                        Nunc feugiat porta viverra. In gravida pulvinar
-                        pharetra. Phasellus finibus dui vel sagittis convallis.
-                        Nulla bibendum felis quis erat iaculis viverra platea
-                        dictumst.
+                        Nunc feugiat porta viverra. In gravida pulvinar pharetra. Phasellus finibus
+                        dui vel sagittis convallis. Nulla bibendum felis quis erat iaculis viverra
+                        platea dictumst.
                       </div>
                       <div className="customer-name">Alex</div>
-                      <div className="customer-co">
-                        Nissan Micra Acenta Auto
-                      </div>
+                      <div className="customer-co">Nissan Micra Acenta Auto</div>
                       <div className="customer-rating">
                         <StarFilled />
                         <StarFilled />
@@ -198,15 +174,12 @@ const About = () => {
                     <div className="customer-menu">
                       {" "}
                       <div className="slide-des">
-                        Nunc feugiat porta viverra. In gravida pulvinar
-                        pharetra. Phasellus finibus dui vel sagittis convallis.
-                        Nulla bibendum felis quis erat iaculis viverra platea
-                        dictumst.
+                        Nunc feugiat porta viverra. In gravida pulvinar pharetra. Phasellus finibus
+                        dui vel sagittis convallis. Nulla bibendum felis quis erat iaculis viverra
+                        platea dictumst.
                       </div>
                       <div className="customer-name">Alex</div>
-                      <div className="customer-co">
-                        Nissan Micra Acenta Auto
-                      </div>
+                      <div className="customer-co">Nissan Micra Acenta Auto</div>
                       <div className="customer-rating">
                         <StarFilled />
                         <StarFilled />
@@ -222,15 +195,12 @@ const About = () => {
                     <div className="customer-menu">
                       {" "}
                       <div className="slide-des">
-                        Nunc feugiat porta viverra. In gravida pulvinar
-                        pharetra. Phasellus finibus dui vel sagittis convallis.
-                        Nulla bibendum felis quis erat iaculis viverra platea
-                        dictumst.
+                        Nunc feugiat porta viverra. In gravida pulvinar pharetra. Phasellus finibus
+                        dui vel sagittis convallis. Nulla bibendum felis quis erat iaculis viverra
+                        platea dictumst.
                       </div>
                       <div className="customer-name">Alex</div>
-                      <div className="customer-co">
-                        Nissan Micra Acenta Auto
-                      </div>
+                      <div className="customer-co">Nissan Micra Acenta Auto</div>
                       <div className="customer-rating">
                         <StarFilled />
                         <StarFilled />
@@ -244,16 +214,15 @@ const About = () => {
               </Swiper>
             </div>
           </div>
-          
         </div>
 
         <div className="core-values-sec">
           <div className="core-values-content">
             <div className="core-value-heading">Core Values</div>
             <div className="core-value-desc">
-              We go through extensive factory training so that we may provide
-              you with the knowledge you need to make an educated decision in
-              choosing the vehicle that is right for your lifestyle.
+              We go through extensive factory training so that we may provide you with the knowledge
+              you need to make an educated decision in choosing the vehicle that is right for your
+              lifestyle.
             </div>
             <ul class="list-items pb-3">
               <li>

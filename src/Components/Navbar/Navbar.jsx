@@ -5,8 +5,10 @@ import logo from "../../Assests/vertex-car-logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import Constant from "../../utils/Constant";
 import { logout } from "../../Redux/Reducers/authSlice";
+import { useDispatch } from "react-redux";
 // import CardSlider from "../CardSlider/CardSlider";
 const Navbar = () => {
+  const dispatch = useDispatch();
   const [navExpanded, setNavExpanded] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const reduxInfo = Constant.reduxData();
@@ -33,7 +35,7 @@ const Navbar = () => {
 
   const checkLogin = () => {
     if (isLoggedIn) {
-      logout();
+      dispatch(logout());
       setIsLoggedIn(false);
       localStorage.clear();
       navigate("/Home");
