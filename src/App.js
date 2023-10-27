@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home";
@@ -16,15 +16,18 @@ import { InvoiceProvider } from "./Components/Invoicepage/InvoiceContext";
 import MyCars from "./Components/MyCars";
 import { useSelector } from "react-redux";
 import Loader from "./Components/Loader/Loader";
+
 import Constant from "./utils/Constant";
 import VehicleInvoice from "./Components/Invoicepage/VehicleInvoice";
 import PayInvoice from "./Components/Invoicepage/PayInvoice";
+
 const App = () => {
   const location = useLocation();
   const isEmployeePanelRendering = location.pathname === "/";
   const isForgetPageRendering = location.pathname === "/forget";
 
   const loader = useSelector((state) => state.loaderReducer.loader);
+  const isAuthenticated = useSelector((state) => state?.authReducer?.user?.token);
 
   return (
     <>
@@ -36,9 +39,11 @@ const App = () => {
           <Route path="/Home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/Findacar" element={<Findacar />} />
+
           <Route path="/My-Cars" element={<MyCars />} />
           <Route path="/Vehicle-Invoice" element={<VehicleInvoice />} />
           <Route path="/Pay-Invoice" element={<PayInvoice />} />
+
           <Route path="/Contactus" element={<Contactus />} />
           <Route path="/forget" element={<Forget />} />
           <Route
@@ -49,10 +54,19 @@ const App = () => {
           <Route
             path="/invoice-details"
             element={
-              <InvoiceProvider>
-                <InvoicePage />
-              </InvoiceProvider>
+              isAuthenticated ? (
+                <InvoiceProvider>
+                  <InvoicePage />
+                </InvoiceProvider>
+              ) : (
+                <Navigate to="/" replace />
+              )
             }
+          />
+
+          <Route
+            path="/My-Cars"
+            element={isAuthenticated ? <MyCars /> : <Navigate to="/" replace />}
           />
         </Routes>
         {!isEmployeePanelRendering && !isForgetPageRendering && <Footer />}

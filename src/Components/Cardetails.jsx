@@ -36,20 +36,12 @@ const Cardetails = (props) => {
   };
   const navigate = useNavigate();
   const invoices = async () => {
-    // navigate("/invoice", {
-    //   state: {
-    //     img,
-    //     type,
-    //     company,
-    //     fuel,
-    //     capacity,
-    //     transmition,
-    //     price,
-    //   },
-    // });
+    const token = reduxInfo?.authReducer?.user?.token;
+    if (!token) return navigate("/");
+
     try {
       const payLoad = {
-        token: reduxInfo.authReducer.user.token,
+        token: token,
         veh_id: location.state.veh_id,
       };
       const response = await bookingRequestAPI(payLoad);
@@ -66,7 +58,7 @@ const Cardetails = (props) => {
     <div className="vc-container">
       <div className="card-details-main">
         <Breadcrumbs />
-        <div className="details-img">
+        <div className="details-img d-flex justify-content-start">
           <img src={decodeURIComponent(img)} alt="Car" />
         </div>
         <div className="car-details-descrip">
