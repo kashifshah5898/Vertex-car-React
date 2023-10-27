@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { getVehicleInvoiceAPI } from "../../Api/Service";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getVehicleInvoiceAPI, payInvoiceAPI } from "../../Api/Service";
 import { toast } from "react-toastify";
 import { VEH_IMAGE_URL } from "../../Api/constants";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Constant from "../../utils/Constant";
 
 const PayInvoice = () => {
   const location = useLocation();
-  const { veh_id } = location.state;
+  const navigate = useNavigate();
+  const { veh_id, inv_id } = location.state;
+  const token = Constant.reduxData();
 
   const formik = useFormik({
     initialValues: {
@@ -26,7 +29,7 @@ const PayInvoice = () => {
       ),
     }),
     onSubmit: (values) => {
-      console.log({ values });
+      submitInvoice(values);
     },
   });
 
@@ -47,6 +50,29 @@ const PayInvoice = () => {
       }
     } catch (error) {
       toast.error(error.msg || error.message || "Something went wrong");
+    }
+  };
+
+  const submitInvoice = async (values) => {
+    try {
+      const payLoad = {
+        token: token.authReducer.user.token,
+        inv_id: inv_id,
+        inv_amount: values.amount,
+        reference: values.reference,
+        comments: values.comment,
+        attachment: values.reciept,
+      };
+      const response = await payInvoiceAPI(payLoad);
+
+      if (response.status === "1") {
+        toast.success(response.message);
+        navigate("/My-Cars");
+      } else {
+        toast.info(response.error);
+      }
+    } catch (error) {
+      toast.error(error.message || error.msg);
     }
   };
 
@@ -73,7 +99,8 @@ const PayInvoice = () => {
                   id="reciept"
                   name="reciept"
                   type="file"
-                  onChange={formik.handleChange}
+                  accept="image/*"
+                  onChange={(e) => formik.setFieldValue("reciept", e.currentTarget.files[0])}
                   onBlur={formik.handleBlur}
                 />
                 <small className="form-text text-muted">

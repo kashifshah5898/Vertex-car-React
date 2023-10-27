@@ -92,7 +92,9 @@ const Findacar = () => {
                 <div className="car-trans">{car.fuel_type}</div>
               </div>
               <div className="car-price">
-                <div className="price">{car.rental_details.split("/")[0] || car.rent}</div>
+                <div className="price overflow-text">
+                  {car.rental_details.split("/")[0] || car.rent}
+                </div>
                 <div className="more-details">
                   <span
                     onClick={() => routeToCars(car)}

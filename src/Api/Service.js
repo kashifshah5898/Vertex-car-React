@@ -25,8 +25,8 @@ const getVehicleInvoiceAPI = (data) => {
   return postApi(routes.getVehInvoices, data);
 };
 
-export const deleteStudentApi = (id) => {
-  return deleteApi(`deleteStudent?id=${id}`);
+const payInvoiceAPI = (values) => {
+  return postApi(routes.payInvoice, values);
 };
 
 export {
@@ -36,4 +36,5 @@ export {
   getAllInvoicesAPI,
   getMyCarsAPI,
   getVehicleInvoiceAPI,
+  payInvoiceAPI,
 };

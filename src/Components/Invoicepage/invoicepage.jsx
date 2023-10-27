@@ -35,7 +35,7 @@ function Invoicepage() {
         {invoices.length === 0 ? (
           <div className="no-invoices-message">Nothing to show</div>
         ) : (
-          invoices.map((invoice, index) => <Card data={invoice} key={index} />)
+          invoices.map((invoice, index) => <Card data={invoice} key={index * 4} />)
         )}
       </div>
     </div>

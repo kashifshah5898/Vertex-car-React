@@ -20,6 +20,8 @@ body {
 
 .width-22 {
   width: 22rem;
+  /* max-height: 60vh; */
+  /* width: 25%; */
 }
 
 .card {
@@ -37,4 +39,26 @@ body {
 
 .bg-white {
   background-color: white !important;
+}
+
+.card-body-book {
+  height: 30vh;
+}
+
+@media (max-width: 500px) {
+  .card-body-book {
+    gap: 40px;
+    display: flex;
+    margin-bottom: 5%;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+}
+.overflow-text {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* max-width: 200px; */
+  max-height: 100px;
 }

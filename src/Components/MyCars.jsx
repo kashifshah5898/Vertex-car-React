@@ -69,7 +69,7 @@ const Card = ({ data, index }) => {
   return (
     <div className="card width-22">
       <img src={VEH_IMAGE_URL + images[0]} className="card-img-top" alt="image_not_found" />
-      <div className="card-body">
+      <div className="card-body card-body-book">
         <h5 className="card-title">
           {make} &nbsp;
           <span className="fs-md">
@@ -92,7 +92,7 @@ const Card = ({ data, index }) => {
           </div>
         </ul>
 
-        <p className="text-justify">
+        <p className="text-justify overflow-text">
           <strong>Rental Details : </strong> {rental_details}
         </p>
       </div>
