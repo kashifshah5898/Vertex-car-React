@@ -95,8 +95,8 @@ const Navbar = () => {
               <div className="col-8">
                 <div className={`nav__collapsable ${navExpanded ? "expanded" : ""}`}>
                   <Link to="/Home">HOME</Link>
-                  {isLoggedIn && <Link to="/about">ABOUT US</Link>}
-                  <Link to="/My-Cars">MY CARS</Link>
+                  <Link to="/about">ABOUT US</Link>
+                  {isLoggedIn && <Link to="/My-Cars">MY CARS</Link>}
                   <Link to="/Findacar">BOOK A CAR</Link>
                   {isLoggedIn && <Link to="/invoice-details">INVOICES</Link>}
 

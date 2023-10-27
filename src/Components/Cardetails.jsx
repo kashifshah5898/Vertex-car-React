@@ -58,7 +58,7 @@ const Cardetails = (props) => {
     <div className="vc-container">
       <div className="card-details-main">
         <Breadcrumbs />
-        <div className="details-img">
+        <div className="details-img d-flex justify-content-start">
           <img src={decodeURIComponent(img)} alt="Car" />
         </div>
         <div className="car-details-descrip">

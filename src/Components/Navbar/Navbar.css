@@ -41,7 +41,7 @@
   display: grid;
   align-items: center;
   gap: 1rem;
-  width: 100%;
+  /* width: 100%; */
   grid-area: collapsable;
   margin-left: 12%;
   /* This is what hides the content */
@@ -75,7 +75,7 @@
   .nav__collapsable {
     max-height: 500px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
   }
 
   .nav--expanded .nav__collapsable,

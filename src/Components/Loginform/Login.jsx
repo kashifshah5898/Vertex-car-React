@@ -5,12 +5,22 @@ import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { loginAPI } from "../../Api/Service";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../Redux/Reducers/authSlice";
+import { useEffect } from "react";
+import Constant from "../../utils/Constant";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const reduxInfo = Constant.reduxData();
+
+  useEffect(() => {
+    if (reduxInfo) {
+      navigate("/Home");
+    }
+  }, []);
 
   const formik = useFormik({
     initialValues: {
