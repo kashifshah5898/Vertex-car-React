@@ -3,13 +3,14 @@ import { PhoneOutlined, MailOutlined, MenuOutlined } from "@ant-design/icons";
 import "./Navbar.css";
 import logo from "../../Assests/vertex-car-logo.png";
 import { Link, useNavigate } from "react-router-dom";
-import Constant from "../../utils/Constant";
 import { logout } from "../../Redux/Reducers/authSlice";
-// import CardSlider from "../CardSlider/CardSlider";
+import { useDispatch, useSelector } from "react-redux";
+
 const Navbar = () => {
   const [navExpanded, setNavExpanded] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const reduxInfo = Constant.reduxData();
+  const reduxInfo = useSelector((state) => state?.authReducer?.user?.token);
+  const dispatch = useDispatch();
 
   const toggleNav = () => {
     setNavExpanded((prevNavExpanded) => !prevNavExpanded);
@@ -18,7 +19,7 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
-    const bool = reduxInfo?.authReducer?.user?.token ? true : false;
+    const bool = reduxInfo ? true : false;
     setIsLoggedIn(bool);
 
     const handleScroll = () => {
@@ -33,7 +34,7 @@ const Navbar = () => {
 
   const checkLogin = () => {
     if (isLoggedIn) {
-      logout();
+      dispatch(logout());
       setIsLoggedIn(false);
       localStorage.clear();
       navigate("/Home");
@@ -94,10 +95,10 @@ const Navbar = () => {
               <div className="col-8">
                 <div className={`nav__collapsable ${navExpanded ? "expanded" : ""}`}>
                   <Link to="/Home">HOME</Link>
-                  <Link to="/about">ABOUT US</Link>
+                  {isLoggedIn && <Link to="/about">ABOUT US</Link>}
                   <Link to="/My-Cars">MY CARS</Link>
                   <Link to="/Findacar">BOOK A CAR</Link>
-                  <Link to="/invoice-details">INVOICES</Link>
+                  {isLoggedIn && <Link to="/invoice-details">INVOICES</Link>}
 
                   <div className="nav__cta">
                     <button className="cta cta--bold" onClick={() => navigate("/Contactus")}>

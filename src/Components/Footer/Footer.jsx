@@ -3,9 +3,13 @@ import "./Footer.css";
 import logo from "../../Assests/vertex-car-logo.png";
 import { Link } from "react-router-dom";
 import FacebookIcon from "../../Assests/Facebookicon";
+import { useSelector } from "react-redux";
+
 const Footer = () => {
+  const reduxInfo = useSelector((state) => state?.authReducer?.user?.token);
+
   return (
-    <div className="vc-container mt-2">
+    <div className="vc-container mt-auto pt-2">
       {" "}
       <div className="footer-main">
         <div className="vc-footer-wrap">
@@ -24,12 +28,16 @@ const Footer = () => {
                 <div className="footer__collapsable">
                   <Link to="/Findacar">BOOK A CAR</Link>
                 </div>
-                <div className="footer__collapsable">
-                  <Link to="/My-Cars">MY CARS</Link>
-                </div>
-                <div className="footer__collapsable">
-                  <Link to="/invoice-details">INVOICES</Link>
-                </div>
+                {reduxInfo && (
+                  <>
+                    <div className="footer__collapsable">
+                      <Link to="/My-Cars">MY CARS</Link>
+                    </div>
+                    <div className="footer__collapsable">
+                      <Link to="/invoice-details">INVOICES</Link>
+                    </div>
+                  </>
+                )}
                 <div className="footer__collapsable">
                   <Link to="/Contactus">CONTACT US</Link>
                 </div>

@@ -36,20 +36,12 @@ const Cardetails = (props) => {
   };
   const navigate = useNavigate();
   const invoices = async () => {
-    // navigate("/invoice", {
-    //   state: {
-    //     img,
-    //     type,
-    //     company,
-    //     fuel,
-    //     capacity,
-    //     transmition,
-    //     price,
-    //   },
-    // });
+    const token = reduxInfo?.authReducer?.user?.token;
+    if (!token) return navigate("/");
+
     try {
       const payLoad = {
-        token: reduxInfo.authReducer.user.token,
+        token: token,
         veh_id: location.state.veh_id,
       };
       const response = await bookingRequestAPI(payLoad);

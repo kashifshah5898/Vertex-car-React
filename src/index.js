@@ -22,7 +22,9 @@ root.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ScrollToTop>
-          <App />
+          <div className="d-flex flex-column min-vh-100">
+            <App />
+          </div>
           <ToastContainer />
         </ScrollToTop>
       </PersistGate>
