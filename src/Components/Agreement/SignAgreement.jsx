@@ -188,11 +188,7 @@ const SignAgreement = () => {
         let payLoad1 = {
           agreement: agreementHtml,
           booking_id: data._id,
-        };
-        payLoad1.signature = {
-          uri: picture,
-          type: "image/png",
-          name: "signature.png",
+          signature: picture,
         };
 
         const response1 = await signAgreementAPI(payLoad1);
@@ -222,8 +218,7 @@ const SignAgreement = () => {
         src={VEH_AGREEMENT_URL + data.agreement_path + "#toolbar=0"}
         allowFullScreen
       ></iframe>
-      {/* {!data.agreement_signed_date && ( */}
-      {data.agreement_signed_date && (
+      {!data.agreement_signed_date && (
         <FloatButton
           description="Sign"
           shape="square"

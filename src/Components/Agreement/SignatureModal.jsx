@@ -18,8 +18,9 @@ const SignatureModal = (props) => {
   };
 
   const saveSignature = async () => {
-    let image = signatureRef.current.getTrimmedCanvas().toDataURL("image/png");
-    image = base64ToFile(image.split("data:image/png;base64,")[1], "signature.jpg", "image/jpeg");
+    // let image = signatureRef.current.getTrimmedCanvas().toDataURL("image/png");
+    let image = signatureRef.current.getTrimmedCanvas().toDataURL();
+    image = base64ToFile(image.split("data:image/png;base64,")[1], "signature.png", "image/png");
     submit(image);
     clearSignature();
   };
