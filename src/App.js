@@ -20,6 +20,7 @@ import Loader from "./Components/Loader/Loader";
 import Constant from "./utils/Constant";
 import VehicleInvoice from "./Components/Invoicepage/VehicleInvoice";
 import PayInvoice from "./Components/Invoicepage/PayInvoice";
+import SignAgreement from "./Components/Agreement/SignAgreement";
 
 const App = () => {
   const location = useLocation();
@@ -36,6 +37,7 @@ const App = () => {
         {isEmployeePanelRendering && <Login />}
         {!isEmployeePanelRendering && !isForgetPageRendering && <Navbar />}
         <Routes>
+          <Route path="/Agreement" element={<SignAgreement />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/Findacar" element={<Findacar />} />

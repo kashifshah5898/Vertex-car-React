@@ -17,15 +17,14 @@ axiosService.interceptors.request.use(
     token = token.authReducer.user.token;
 
     let data;
-    if (config.url === routes.payInvoice) {
+    let formData = [routes.payInvoice, routes.signAgreement];
+    if (formData.includes(config.url)) {
       config.headers["Content-Type"] = "multipart/form-data";
       data = new FormData();
-      data.append("token", config.data.token);
-      data.append("inv_id", config.data.inv_id);
-      data.append("inv_amount", config.data.inv_amount);
-      data.append("comments", config.data.comments);
-      data.append("reference", config.data.reference);
-      data.append("attachement", config.data.attachment);
+      data.append("token", token);
+      for (let key in config.data) {
+        data.append(key, config.data[key]);
+      }
     } else {
       data = { ...config.data, token: token };
     }

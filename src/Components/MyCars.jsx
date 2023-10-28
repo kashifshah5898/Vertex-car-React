@@ -66,43 +66,51 @@ const Card = ({ data, index }) => {
     navigate("/Vehicle-Invoice", { state: data });
   };
 
+  const vehicleAgreement = () => {
+    navigate("/Agreement", { state: data });
+  };
+
   return (
-    <div className="card width-22">
-      <img src={VEH_IMAGE_URL + images[0]} className="card-img-top" alt="image_not_found" />
-      <div className="card-body card-body-book">
-        <h5 className="card-title">
-          {make} &nbsp;
-          <span className="fs-md">
-            (<span className="text-green ">{model}</span>)
+    <>
+      <div className="card width-22">
+        <img src={VEH_IMAGE_URL + images[0]} className="card-img-top" alt="image_not_found" />
+        <div className="card-body card-body-book">
+          <h5 className="card-title">
+            {make} &nbsp;
+            <span className="fs-md">
+              (<span className="text-green ">{model}</span>)
+            </span>
+          </h5>
+
+          <ul>
+            <div className="row card-text card-font">
+              <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <li>Reg NO : {reg_no}</li>
+                <li className={statusColor}>Status : {status}</li>
+                <li> {transmission}</li>
+              </div>
+              <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <li>Rent : {rent}</li>
+                <li>Fuel Type : {fuel_type}</li>
+                <li>Milage : {milage}</li>
+              </div>
+            </div>
+          </ul>
+
+          <p className="text-justify overflow-text">
+            <strong>Rental Details : </strong> {rental_details}
+          </p>
+        </div>
+        <div class="card-footer text-muted  d-flex justify-content-end">
+          <span className="pointer" onClick={vehicleAgreement}>
+            Agreement
           </span>
-        </h5>
-
-        <ul>
-          <div className="row card-text card-font">
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <li>Reg NO : {reg_no}</li>
-              <li className={statusColor}>Status : {status}</li>
-              <li> {transmission}</li>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <li>Rent : {rent}</li>
-              <li>Fuel Type : {fuel_type}</li>
-              <li>Milage : {milage}</li>
-            </div>
-          </div>
-        </ul>
-
-        <p className="text-justify overflow-text">
-          <strong>Rental Details : </strong> {rental_details}
-        </p>
+          &nbsp; &nbsp; &nbsp;
+          <span className="pointer" onClick={vehicleInvoice}>
+            Invoices
+          </span>
+        </div>
       </div>
-      <div class="card-footer text-muted  d-flex justify-content-end">
-        <span className="pointer">Agreement</span>
-        &nbsp; &nbsp; &nbsp;
-        <span className="pointer" onClick={vehicleInvoice}>
-          Invoices
-        </span>
-      </div>
-    </div>
+    </>
   );
 };

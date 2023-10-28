@@ -29,6 +29,14 @@ const payInvoiceAPI = (values) => {
   return postApi(routes.payInvoice, values);
 };
 
+const signAgreementAPI = (values) => {
+  return postApi(routes.signAgreement, values);
+};
+
+const getAgreementDataAPI = (values) => {
+  return postApi(routes.getAgreementData, values);
+};
+
 export {
   loginAPI,
   getAllVehiclesAPI,
@@ -37,4 +45,6 @@ export {
   getMyCarsAPI,
   getVehicleInvoiceAPI,
   payInvoiceAPI,
+  getAgreementDataAPI,
+  signAgreementAPI,
 };
