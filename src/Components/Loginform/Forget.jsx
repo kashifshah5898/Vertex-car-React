@@ -25,7 +25,7 @@ const validateMessages = {
 /* eslint-enable no-template-curly-in-string */
 
 const onFinish = (values) => {
-  console.log(values);
+  // console.log(values);
 };
 const Forget = () => {
   return (

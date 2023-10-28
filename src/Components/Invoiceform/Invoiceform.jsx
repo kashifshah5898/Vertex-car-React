@@ -6,8 +6,6 @@ function Invoices() {
   const [processing, setProcessing] = useState(false);
   const [message, setMessage] = useState("");
   const location = useLocation();
-  const mydata = location.state;
-  console.log("mydata", mydata);
   const navigate = useNavigate();
 
   const handleFormSubmit = (event) => {

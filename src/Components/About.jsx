@@ -259,8 +259,8 @@ const About = () => {
                 disableOnInteraction: false,
               }}
               loop={true} // Enable looping
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
+              // onSwiper={(swiper) => console.log(swiper)}
+              // onSlideChange={() => console.log("slide change")}
             >
               <SwiperSlide className="core-slider">
                 <img src={coreslideimg1} alt="" />

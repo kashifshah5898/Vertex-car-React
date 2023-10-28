@@ -1,5 +1,6 @@
 import axios from "axios";
 import { baseUrl, hideLoader, showLoader } from "../utils/Constant";
+import { routes } from "./routes";
 const { default: store } = require("../Redux/store");
 
 const axiosService = axios.create({
@@ -14,9 +15,9 @@ axiosService.interceptors.request.use(
     });
 
     token = token.authReducer.user.token;
-    console.log(config.data);
+
     let data;
-    if (config.url === "/pay_invoice") {
+    if (config.url === routes.payInvoice) {
       config.headers["Content-Type"] = "multipart/form-data";
       data = new FormData();
       data.append("token", config.data.token);
