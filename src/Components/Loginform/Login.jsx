@@ -17,7 +17,7 @@ const Login = () => {
   const reduxInfo = Constant.reduxData();
 
   useEffect(() => {
-    if (reduxInfo) {
+    if (reduxInfo?.authReducer?.user?.token) {
       navigate("/Home");
     }
   }, []);
@@ -33,11 +33,6 @@ const Login = () => {
     }),
     onSubmit: (values) => handleSubmit(values),
   });
-
-  useEffect(() => {
-    const reduxInfo = Constant.reduxData();
-    if (reduxInfo?.authReducer?.user?.token) return navigate("/Home");
-  }, []);
 
   const handleSubmit = async (values) => {
     try {
