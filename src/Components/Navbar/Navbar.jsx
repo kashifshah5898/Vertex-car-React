@@ -70,7 +70,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="login-button text-white ">
+          <div className="login-button text-white d-flex justify-content-end px-4 ">
             <span onClick={() => checkLogin()} className="pointer">
               {isLoggedIn ? "Log out" : "Log in"}
             </span>

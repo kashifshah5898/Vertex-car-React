@@ -58,7 +58,7 @@ const VehicleInvoice = () => {
           >
             <option value="All">All</option>
             <option value="pending">Pending</option>
-            <option value="approved">Approved</option>
+            <option value="paid">Paid</option>
           </select>
         </div>
       </div>

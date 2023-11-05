@@ -51,14 +51,9 @@ const Findacar = () => {
   };
 
   const routeToCars = (data) => {
-    navigate(
-      `/car/${encodeURIComponent(VEH_IMAGE_URL + data.images[0])}/${data.veh_name}/${data.make}/${
-        data.fuel_type
-      }/${data.seats}/${"transmition"}/${data.rental_details.split("/")[0] || data.rent}`,
-      {
-        state: data,
-      }
-    );
+    navigate("/car", {
+      state: data,
+    });
   };
 
   const RenderCars1 = ({ car }) => {
@@ -75,26 +70,29 @@ const Findacar = () => {
           <div className="col-md-8 ">
             <div className="card-body">
               <h5 className="card-title">{car.veh_name}</h5>
-              <h6 className="card-title">{car.make}</h6>
-              <p className="card-text">{car.body_type}</p>
+              <h6 className="card-title">
+                {car.make} {car.model} {car.year}
+              </h6>
+              {/* <p className="card-text">{car.body_type}</p> */}
               <div className="car-rating">
-                <div className="rating-1">Year: {car.year}</div>
-                <div className="condition">Average</div>
-                <div className="reviews">(30 Reviews)</div>
+                <div className="fuel-type">
+                  <CarOutlined /> &nbsp;{car.transmission}
+                </div>
+                {/* <div className="rating-1"> {car.year}</div> */}
+                {/* <div className="condition">Average</div>
+                <div className="reviews">(30 Reviews)</div> */}
               </div>
               <div className="car-des">
                 <div className="fuel-type">
-                  <CarOutlined /> &nbsp;{car.milage}
+                  <CarOutlined /> &nbsp;{car.fuel_type}
                 </div>
                 <div className="car-cap d-flex justify-content-center align-items-center">
-                  <CalendarOutlined /> &nbsp; {car.seats} Seats
+                  <CalendarOutlined /> &nbsp; {car.status} suitcase
                 </div>
-                <div className="car-trans">{car.fuel_type}</div>
+                {/* <div className="car-trans">{car.fuel_type}</div> */}
               </div>
               <div className="car-price">
-                <div className="price overflow-text">
-                  {car.rental_details.split("/")[0] || car.rent}
-                </div>
+                <div className="price overflow-text">{car.rental_details.split("/")[0]}/week</div>
                 <div className="more-details">
                   <span
                     onClick={() => routeToCars(car)}

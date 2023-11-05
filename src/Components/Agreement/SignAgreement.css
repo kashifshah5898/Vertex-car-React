@@ -8,3 +8,23 @@
   border: 2px solid gray;
   border-radius: 5px;
 }
+
+/* YourComponent.css */
+.float-button {
+  position: absolute;
+  top: 85%;
+  transform: translateY(-50%);
+  /* Add other styles as needed */
+}
+
+@media screen and (max-width: 768px) {
+  .float-button {
+    right: 50px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .float-button {
+    right: 400px;
+  }
+}

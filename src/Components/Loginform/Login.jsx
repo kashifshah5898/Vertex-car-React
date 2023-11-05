@@ -1,6 +1,6 @@
 import "./Login.css";
 import LoginLayout from "./LoginLayout";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
@@ -13,6 +13,7 @@ import Constant from "../../utils/Constant";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const reduxInfo = Constant.reduxData();
 
@@ -36,10 +37,16 @@ const Login = () => {
 
   const handleSubmit = async (values) => {
     try {
+      debugger;
       const response = await loginAPI(values);
 
       if (response.status === "1") {
-        navigate("/Home");
+        if (location?.state?.redirectToCar) {
+          navigate("/car", { state: location.state.data });
+        } else {
+          navigate("/Home");
+        }
+
         dispatch(setUser(response.data));
       } else {
         toast.error(response.error);

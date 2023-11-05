@@ -10,7 +10,7 @@ import Constant from "../../utils/Constant";
 const PayInvoice = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { veh_id, inv_id } = location.state;
+  const { veh_id, inv_id, due_date } = location.state;
   const token = Constant.reduxData();
 
   const formik = useFormik({
@@ -85,8 +85,8 @@ const PayInvoice = () => {
         <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
           <div className="card p-4">
             <h6>Invoice amount : {invoice?.vehicle?.rent}</h6>
-            <h6>Inv no : </h6>
-            <h6>Due Date : </h6>
+            <h6>Inv no : {inv_id}</h6>
+            <h6>Due Date : {due_date.split(" ")[0]}</h6>
           </div>
         </div>
         <div className="col-lg-8 col-md-12 col-sm-12 col-xs-12">

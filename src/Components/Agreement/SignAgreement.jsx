@@ -212,22 +212,22 @@ const SignAgreement = () => {
 
   return (
     <div>
+      {data.agreement_signed_date && (
+        <FloatButton
+          description="Sign"
+          shape="square"
+          type="primary"
+          className="float-button"
+          tooltip={<div>Sign Agreement</div>}
+          onClick={signButtonClicked}
+        ></FloatButton>
+      )}
       <iframe
         className="iframePdf"
         title="Embedded Content"
         src={VEH_AGREEMENT_URL + data.agreement_path + "#toolbar=0"}
         allowFullScreen
       ></iframe>
-      {!data.agreement_signed_date && (
-        <FloatButton
-          description="Sign"
-          shape="square"
-          type="primary"
-          style={{ right: 24 }}
-          tooltip={<div>Sign Agreement</div>}
-          onClick={signButtonClicked}
-        ></FloatButton>
-      )}
       <SignatureModal isModalOpen={isModalOpen} submit={submit} cancel={cancel} />
     </div>
   );

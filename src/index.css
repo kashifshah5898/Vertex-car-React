@@ -42,7 +42,7 @@ body {
 }
 
 .card-body-book {
-  height: 30vh;
+  /* height: 30vh; */
 }
 
 @media (max-width: 500px) {

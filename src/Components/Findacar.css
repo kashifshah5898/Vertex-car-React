@@ -182,9 +182,8 @@
 }
 .price {
   width: 50%;
-  color: #0d233e;
-  font-size: 18px;
-  font-weight: 700;
+  color: green;
+  font-size: 17px;
 }
 .more-details {
   width: 50%;
